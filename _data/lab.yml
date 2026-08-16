@@ -1,0 +1,33 @@
+name: HEAL Lab
+tagline: Health Informatics and Analytics Research
+full_name: Health, Evidence, Analytics & Learning Lab
+directors:
+- name: Dr. Vijay Mago
+  role: Co-Director
+  title: Associate Professor and Chair, SHPM
+  department: School of Health Policy and Management
+  faculty: Faculty of Health, York University
+  photo: /assets/images/team/vijay-mago.jpg
+  short_bio: |-
+    Dr. Vijay Mago is an Associate Professor and Chair of the School of Health Policy and Management at York University. His interdisciplinary research program focuses on artificial intelligence, machine learning, natural language processing, and large language models, with applications in health and healthcare,...
+  email: vmago@yorku.ca
+  website: https://scholar.google.ca/citations?user=lotIW94AAAAJ&hl=en&oi=ao
+contact:
+  email: vmago@yorku.ca
+  office: 340 Stong College, Keele Campus
+  address: 4700 Keele Street, Toronto, ON M3J 1P3, Canada
+  phone: +1 (416) 736-2100
+bio:
+- >
+  The Health, Evidence, Analytics & Learning (HEAL) Lab at York University brings together researchers working at the intersection of health informatics, artificial intelligence, and data science. Our work spans natural language processing, health data analytics, complex systems modelling, and the responsible use of AI in healthcare and policy.
+- >
+  HEAL Lab co-directors lead interdisciplinary projects with clinical, community, and industry partners, with an emphasis on health equity, evidence synthesis, and translating research into practice.
+research_interests:
+- Health Informatics
+- Natural Language Processing
+- Big Data Analytics
+- Complex Health Systems Modeling
+- AI for Social Good
+footer:
+  affiliation: York University · Faculty of Health
+  copyright: HEAL Lab

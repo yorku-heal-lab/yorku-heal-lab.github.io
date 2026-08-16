@@ -1,0 +1,24 @@
+sections:
+- title: Research Themes
+  format: theme
+  items:
+  - title: Big Data Analytics for Population Health
+    description: |-
+      Our lab builds scalable analytics pipelines to support decision-making in complex health systems, including methods for integrating heterogeneous data sources and summarizing evidence for policymakers.
+  - title: Health Informatics & Clinical NLP
+    description: |-
+      We develop natural language processing methods to extract insights from clinical notes, policy documents, and health records while addressing privacy, bias, and ethical use of AI in healthcare settings.
+  - title: Modelling Complex Health Systems
+    description: |-
+      We use agent-based simulation and computational modelling to study systemic challenges such as homelessness, obesity, and access to care, helping stakeholders evaluate interventions before deployment.
+- title: Current Projects
+  format: list
+  items:
+  - title: Ethical LLMs in Healthcare
+    description: Studying fairness, transparency, and governance of large language models in clinical contexts.
+  - title: HEAL-Summ
+    description: Frameworks for health information summarization and evidence synthesis.
+    url: https://github.com/heal-lab/heal-summ
+  - title: Health Systems Simulation
+    description: Agent-based models for policy evaluation and resource allocation.
+    url: https://github.com/heal-lab/health-systems-simulation

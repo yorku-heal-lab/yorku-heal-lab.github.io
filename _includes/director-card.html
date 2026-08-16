@@ -1,0 +1,25 @@
+<article class="director-card">
+  <img src="{{ include.director.photo | relative_url }}" alt="Photo of {{ include.director.name }}" class="director-photo">
+  <div class="director-info">
+    <p class="director-role">{{ include.director.role }}</p>
+    <h3 class="director-name">{{ include.director.name }}</h3>
+    <p class="director-title">{{ include.director.title }}</p>
+    {% if include.director.short_bio %}
+      <p class="director-bio">{{ include.director.short_bio }}</p>
+    {% endif %}
+    <dl class="director-meta">
+      {% if include.director.department %}
+        <dt>Department</dt>
+        <dd>{{ include.director.department }}</dd>
+      {% endif %}
+      {% if include.director.email %}
+        <dt>Email</dt>
+        <dd><a href="mailto:{{ include.director.email }}">{{ include.director.email }}</a></dd>
+      {% endif %}
+      {% if include.director.website %}
+        <dt>Profile</dt>
+        <dd><a href="{{ include.director.website }}" target="_blank" rel="noopener noreferrer">York Profile</a></dd>
+      {% endif %}
+    </dl>
+  </div>
+</article>

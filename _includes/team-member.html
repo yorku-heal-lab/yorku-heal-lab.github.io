@@ -1,0 +1,29 @@
+<article class="team-member">
+  <img src="{{ include.member.photo | relative_url }}" alt="Photo of {{ include.member.name }}" class="team-photo">
+  <div class="team-info">
+    <h3 class="team-name">{{ include.member.name }}</h3>
+    <p class="team-role">{{ include.member.role }}</p>
+    {% if include.member.affiliation %}
+      <p class="team-affiliation">{{ include.member.affiliation }}</p>
+    {% endif %}
+    {% if include.member.email %}
+      <p class="team-email"><a href="mailto:{{ include.member.email }}">{{ include.member.email }}</a></p>
+    {% endif %}
+    {% if include.member.bio %}
+      {% assign bio_limit = 200 %}
+      {% if include.member.bio.size > bio_limit %}
+        <div class="team-bio team-bio--expandable">
+          <p class="team-bio__text">
+            <span class="team-bio__preview">{{ include.member.bio | truncate: bio_limit, '' }}…</span>
+            <span class="team-bio__full" hidden>{{ include.member.bio }}</span>
+          </p>
+          <button type="button" class="team-bio__toggle" aria-expanded="false">
+            Read more
+          </button>
+        </div>
+      {% else %}
+        <p class="team-bio">{{ include.member.bio }}</p>
+      {% endif %}
+    {% endif %}
+  </div>
+</article>

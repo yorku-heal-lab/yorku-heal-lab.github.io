@@ -1,0 +1,28 @@
+title: HEAL Lab
+description: Health Informatics and Analytics Research at York University
+url: "https://heal-lab.github.io"
+baseurl: ""
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - DEPLOYMENT.md
+  - vendor
+  - .git
+  - .github
+
+lab:
+  pi_name: Dr. Vijay Mago
+  pi_title: Associate Professor & Chair
+  department: School of Health Policy and Management
+  faculty: Faculty of Health, York University
+  email: vmago@yorku.ca

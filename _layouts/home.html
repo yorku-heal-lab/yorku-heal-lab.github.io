@@ -1,0 +1,55 @@
+---
+layout: default
+---
+<div class="container home-layout">
+  <section class="directors-section">
+    <h2>Co-Directors</h2>
+    <div class="directors-grid">
+      {% for director in site.data.lab.directors %}
+        {% include director-card.html director=director %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <div class="home-body">
+    {% include lab-contact-sidebar.html %}
+
+    <div class="home-content">
+      <section class="content-section">
+        <h2>About the Lab</h2>
+        {% for paragraph in site.data.lab.bio %}
+          <p>{{ paragraph }}</p>
+        {% endfor %}
+      </section>
+
+      <section class="content-section">
+        <h2>Research Interests</h2>
+        <ul class="interest-list">
+          {% for interest in site.data.lab.research_interests %}
+            <li>{{ interest }}</li>
+          {% endfor %}
+        </ul>
+      </section>
+
+      <section class="content-section">
+        <h2>Recent News</h2>
+        <div class="news-list">
+          {% for item in site.data.news limit:3 %}
+            {% include news-item.html item=item %}
+          {% endfor %}
+        </div>
+        <p class="section-link"><a href="{{ '/news/' | relative_url }}">View all news &rarr;</a></p>
+      </section>
+
+      <section class="content-section">
+        <h2>Recent Publications</h2>
+        <div class="publication-list">
+          {% for pub in site.data.publications limit:3 %}
+            {% include publication-item.html pub=pub %}
+          {% endfor %}
+        </div>
+        <p class="section-link"><a href="{{ '/publications/' | relative_url }}">View all publications &rarr;</a></p>
+      </section>
+    </div>
+  </div>
+</div>

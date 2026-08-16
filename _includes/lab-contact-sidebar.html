@@ -1,0 +1,17 @@
+<aside class="lab-contact-sidebar">
+  <div class="lab-contact-card">
+    <h2 class="lab-contact-title">Lab Contact</h2>
+    <dl class="lab-contact-meta">
+      <dt>Email</dt>
+      <dd><a href="mailto:{{ site.data.lab.contact.email }}">{{ site.data.lab.contact.email }}</a></dd>
+      <dt>Office</dt>
+      <dd>{{ site.data.lab.contact.office }}</dd>
+      <dt>Address</dt>
+      <dd>{{ site.data.lab.contact.address }}</dd>
+      {% if site.data.lab.contact.phone %}
+        <dt>Phone</dt>
+        <dd>{{ site.data.lab.contact.phone }}</dd>
+      {% endif %}
+    </dl>
+  </div>
+</aside>

@@ -1,0 +1,13 @@
+<article class="publication-item{% if include.pub.highlight %} publication-item--highlight{% endif %}">
+  <h3 class="publication-title">
+    {% if include.pub.paper_url %}
+      <a href="{{ include.pub.paper_url }}" target="_blank" rel="noopener noreferrer">{{ include.pub.title }}</a>
+    {% else %}
+      {{ include.pub.title }}
+    {% endif %}
+  </h3>
+  <p class="publication-authors">{{ include.pub.authors }}</p>
+  <p class="publication-venue">
+    <em>{{ include.pub.venue }}</em>, {{ include.pub.year }}
+  </p>
+</article>

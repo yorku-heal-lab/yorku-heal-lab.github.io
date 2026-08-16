@@ -1,0 +1,15 @@
+<article class="resource-item">
+  <h3 class="resource-title">
+    <a href="{{ include.item.url }}" rel="noopener noreferrer" target="_blank">{{ include.item.name }}</a>
+  </h3>
+  {% if include.item.description %}
+    <p class="resource-description">{{ include.item.description }}</p>
+  {% endif %}
+  {% if include.item.tags %}
+    <ul class="resource-tags" aria-label="Tags">
+      {% for tag in include.item.tags %}
+        <li>{{ tag }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</article>

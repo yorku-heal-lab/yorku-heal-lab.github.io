@@ -1,0 +1,23 @@
+sections:
+- title: GitHub Repositories
+  items:
+  - name: HEAL-Summ
+    description: Frameworks and tools for health information summarization and evidence synthesis.
+    url: https://github.com/heal-lab/heal-summ
+    tags:
+    - Python
+    - NLP
+  - name: Health Systems Simulation
+    description: Agent-based models and simulation code for complex health systems research.
+    url: https://github.com/heal-lab/health-systems-simulation
+    tags:
+    - Python
+    - Simulation
+- title: Other Resources
+  items:
+  - name: HEAL Lab on GitHub
+    description: Browse all open-source software, datasets, and project repositories from the lab.
+    url: https://github.com/heal-lab
+  - name: York University Research Profile
+    description: PI profile and institutional research information at York University.
+    url: https://discover.academics.yorku.ca/Vijay.Mago

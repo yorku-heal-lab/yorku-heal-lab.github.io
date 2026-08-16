@@ -1,0 +1,12 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-block">
+      <strong>{{ site.data.lab.footer.affiliation }}</strong>
+      <p>{{ site.data.lab.contact.address }}</p>
+    </div>
+    <div class="footer-block">
+      <p>Contact: <a href="mailto:{{ site.data.lab.contact.email }}">{{ site.data.lab.contact.email }}</a></p>
+      <p class="footer-copy">&copy; {{ 'now' | date: '%Y' }} {{ site.data.lab.footer.copyright }}</p>
+    </div>
+  </div>
+</footer>

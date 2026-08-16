@@ -1,0 +1,15 @@
+- date: '2025-06-15'
+  title: Welcome to the HEAL Lab website
+  summary: |-
+    We are launching our new lab website to share our research in health informatics, analytics, and AI for health policy.
+  link: /news/
+- date: '2025-03-01'
+  title: New SSHRC-funded project on health data analytics
+  summary: |-
+    HEAL Lab receives funding to advance methods for analyzing complex health systems data and supporting evidence-based policy.
+  link: /research/
+- date: '2024-11-20'
+  title: Paper accepted at Applied Soft Computing
+  summary: |-
+    Our work on ethical considerations for large language models in healthcare has been accepted for publication.
+  link: /publications/

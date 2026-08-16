@@ -1,0 +1,37 @@
+postdocs:
+- name: Dr. Frederic Fu
+  role: Postdoctoral Researcher, Course Director, SHPM
+  photo: /assets/images/team/frederic-fu.png
+  email: fredpfu@yorku.ca
+  bio: |-
+    Dr. Frederic Pengfei Fu is a Postdoctoral Researcher and Course Director in the School of Health Policy and Management at York University. His research focuses on mental health, health equity, and the use of artificial intelligence and health data analytics to understand health risks among underserved and underrepresented populations. A major area of his work examines mental health, disability, substance use, and access to health and social services among people experiencing homelessness, using population-based and administrative data such as Point-in-Time Counts and the Homeless Individuals and Families Information System. His broader research also explores the responsible and equitable use of artificial intelligence in healthcare, including public attitudes toward AI, algorithmic equity, and the social factors that shape people’s ability to benefit from emerging technologies. His work combines epidemiological and statistical methods, machine learning, evidence synthesis, and community-engaged research, with an emphasis on translating research findings into health policy and practice.
+phd_students:
+- name: Arunim Garg
+  role: PhD student
+  photo: /assets/images/team/arunim-garg.jpg
+  email: arunim@yorku.ca
+  affiliation: Lecturer
+  bio: |-
+    Arunim Garg is a PhD student in Health Systems Management and Health Data Analytics at York University and an EPIC-AT Fellow (AGE-WELL). His research builds and evaluates multilingual conversational health AI to help older adults navigate care in their own languages, with an emphasis on low-resource languages that mainstream tools overlook. He is also a lecturer and curriculum designer at Acsenda School of Management, where he led the design of its AI & Business Analytics concentration, and holds a master's in Artificial Intelligence from Lakehead University.
+- name: Mila Kolpashnikova
+  role: PhD student
+  photo: /assets/images/team/placeholder.svg
+  email: klambert@yorku.ca
+  affiliation: Senior AI Developer
+  bio: |-
+    Senior AI Developer at a Toronto-based startup, specializing in the design and evaluation of agentic workflows and Retrieval-Augmented Generation (RAG) systems. Current research explores AI system architectures and platform sovereignty.
+- name: Yash Amethiya
+  role: PhD student
+  photo: /assets/images/team/yash-amethiya.png
+  email: yamethiy@yorku.ca
+  affiliation: Software Developer
+  bio: |-
+    Yash Amethiya is pursuing PhD in Health (specialized in Health System Management and Health Data Analytics) at York University. His research focuses on introducing design disciplines to Electronic Health Records (EHRs) and Healthcare. By moving beyond traditional widget based EHRs, his work aims to reduce clinician burnout, optimize cognitive load, and encourage dynamic learning health systems.Further, his research emphasizes the application of neurosymbolic artificial intelligence in healthcare, combining transparent symbolic logic and human in the loop guardrails rather than relying on standard black box AI models. He is also a Software Developer at Aurora Constellations, where he leads the development of the prototype for the same research.
+masters_students: []
+collaborators: []
+alumni:
+- name: Former Student
+  role: PhD Alumni
+  affiliation: Industry Research Lab
+  photo: /assets/images/team/placeholder.svg
+  bio: Now a data scientist applying health informatics methods in industry.
