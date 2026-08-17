@@ -11,7 +11,7 @@ URL: `https://USERNAME.github.io` or `https://ORG-NAME.github.io`
 The repository **must** be named exactly:
 
 - `YOUR-USERNAME.github.io` (personal account), or
-- `heal-lab.github.io` (organization account)
+- `yorku-heal-lab.github.io` (this site)
 
 The site is served from the **repository root** at `/`.
 
@@ -35,7 +35,7 @@ Rebuild locally with `bundle exec jekyll serve --baseurl "/REPO-NAME"` to previe
 ### 1. Create the GitHub repository
 
 1. Go to [github.com/new](https://github.com/new).
-2. Create a repository named `heal-lab.github.io` (or `YOUR-USERNAME.github.io`).
+2. Create a repository named `yorku-heal-lab.github.io` under the [yorku-heal-lab](https://github.com/yorku-heal-lab) account.
 3. Do **not** initialize with a README (we already have one).
 
 ### 2. Push the site code
@@ -47,7 +47,7 @@ git init
 git add .
 git commit -m "Initial HEAL Lab Jekyll site"
 git branch -M main
-git remote add origin git@github.com:YOUR-ORG-OR-USERNAME/heal-lab.github.io.git
+git remote add origin git@github.com:yorku-heal-lab/yorku-heal-lab.github.io.git
 git push -u origin main
 ```
 
@@ -65,7 +65,7 @@ Edit `_config.yml` before pushing (or in a follow-up commit):
 
 ```yaml
 # For user/org site at root:
-url: "https://heal-lab.github.io"
+url: "https://yorku-heal-lab.github.io"
 baseurl: ""
 
 # For project site:
