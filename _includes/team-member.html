@@ -6,8 +6,8 @@
     {% if include.member.affiliation %}
       <p class="team-affiliation">{{ include.member.affiliation }}</p>
     {% endif %}
-    {% if include.member.email %}
-      <p class="team-email"><a href="mailto:{{ include.member.email }}">{{ include.member.email }}</a></p>
+    {% if include.member.supervisor %}
+      <p class="team-supervisor">Supervisor: {{ include.member.supervisor }}</p>
     {% endif %}
     {% if include.member.bio %}
       {% assign bio_limit = 200 %}

@@ -20,7 +20,7 @@ DEFAULT_TEAM_YML = ROOT / "_data" / "team.yml"
 TEAM_IMAGES_DIR = ROOT / "assets" / "images" / "team"
 PLACEHOLDER_PHOTO = "/assets/images/team/placeholder.svg"
 
-TEAM_GROUPS = ("postdocs", "phd_students", "masters_students", "collaborators")
+TEAM_GROUPS = ("collaborators", "postdocs", "phd_students", "masters_students", "visiting_scholars")
 
 COLUMNS = {
     "name": "name to display",
@@ -32,6 +32,8 @@ COLUMNS = {
     "interests": "research interests (keywords)",
     "image_hint": "link to profile image to use",
 }
+
+SUPERVISOR_HEADERS = ("Supervisor Name (if present)", "Supervisor Name")
 
 DEFAULT_DEPARTMENT = "School of Health Policy and Management"
 DEFAULT_FACULTY = "Faculty of Health, York University"
@@ -106,6 +108,8 @@ def classify_team_group(role_in_lab: str) -> str | None:
         return None
     if "collaborator" in lowered:
         return "collaborators"
+    if "visiting scholar" in lowered:
+        return "visiting_scholars"
     if "postdoc" in lowered or "postdoctoral" in lowered:
         return "postdocs"
     if re.search(r"\bph\.?\s*d\.?\b", lowered) or "phd" in lowered or "doctoral" in lowered:
@@ -157,6 +161,13 @@ def parse_interests(text: str) -> list[str]:
     return [chunk.strip() for chunk in chunks if chunk.strip()]
 
 
+def resolve_column_index(header_index: dict[str, int], labels: tuple[str, ...]) -> int | None:
+    for label in labels:
+        if label in header_index:
+            return header_index[label]
+    return None
+
+
 def read_rows(xlsx_path: Path) -> tuple[list[str], list[dict[str, str]], dict[int, str]]:
     workbook = openpyxl.load_workbook(xlsx_path)
     worksheet = workbook.active
@@ -168,11 +179,17 @@ def read_rows(xlsx_path: Path) -> tuple[list[str], list[dict[str, str]], dict[in
     if missing:
         raise ValueError(f"Missing expected columns in spreadsheet: {', '.join(missing)}")
 
+    supervisor_index = resolve_column_index(header_index, SUPERVISOR_HEADERS)
+
     rows: list[dict[str, str]] = []
     for excel_row, row in enumerate(worksheet.iter_rows(min_row=2, values_only=True), start=2):
         record = {
             key: normalize(row[header_index[label]]) for key, label in COLUMNS.items()
         }
+        if supervisor_index is not None and supervisor_index < len(row):
+            record["supervisor"] = normalize(row[supervisor_index])
+        else:
+            record["supervisor"] = ""
         record["excel_row"] = str(excel_row)
         if record["name"]:
             rows.append(record)
@@ -269,7 +286,7 @@ def build_director(record: dict[str, str], photo: str) -> dict:
         "photo": photo,
     }
     if bio:
-        director["short_bio"] = short_bio(bio)
+        director["bio"] = bio
     if record["email"]:
         director["email"] = record["email"]
     if record["publications"]:
@@ -285,10 +302,10 @@ def build_team_member(record: dict[str, str], photo: str) -> dict:
         "role": role_in_lab,
         "photo": photo,
     }
-    if record["email"]:
-        member["email"] = record["email"]
     if record["role_outside"]:
         member["affiliation"] = record["role_outside"]
+    if record.get("supervisor"):
+        member["supervisor"] = record["supervisor"]
     if bio:
         member["bio"] = bio
     return member
@@ -309,11 +326,9 @@ def merge_lab_data(existing: dict, directors: list[dict]) -> dict:
 
 
 def merge_team_data(existing: dict, grouped_members: dict[str, list[dict]]) -> dict:
-    team_data = {
+    return {
         group: sort_by_first_name(grouped_members.get(group, [])) for group in TEAM_GROUPS
     }
-    team_data["alumni"] = sort_by_first_name(existing.get("alumni") or [])
-    return team_data
 
 
 def empty_team_groups() -> dict[str, list[dict]]:

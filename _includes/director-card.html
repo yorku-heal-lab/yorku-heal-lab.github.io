@@ -4,8 +4,22 @@
     <p class="director-role">{{ include.director.role }}</p>
     <h3 class="director-name">{{ include.director.name }}</h3>
     <p class="director-title">{{ include.director.title }}</p>
-    {% if include.director.short_bio %}
-      <p class="director-bio">{{ include.director.short_bio }}</p>
+    {% assign director_bio = include.director.bio | default: include.director.short_bio %}
+    {% if director_bio %}
+      {% assign bio_limit = 200 %}
+      {% if director_bio.size > bio_limit %}
+        <div class="team-bio team-bio--expandable director-bio">
+          <p class="team-bio__text">
+            <span class="team-bio__preview">{{ director_bio | truncate: bio_limit, '' }}…</span>
+            <span class="team-bio__full" hidden>{{ director_bio }}</span>
+          </p>
+          <button type="button" class="team-bio__toggle" aria-expanded="false">
+            Read more
+          </button>
+        </div>
+      {% else %}
+        <p class="director-bio">{{ director_bio }}</p>
+      {% endif %}
     {% endif %}
     <dl class="director-meta">
       {% if include.director.department %}

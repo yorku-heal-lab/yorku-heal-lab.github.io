@@ -210,6 +210,7 @@ python3 scripts/sync_from_xlsx.py
 |--------|-------------|
 | name to display | Full name shown on the site |
 | role in the lab | e.g. Co-Director, PhD student, Postdoctoral Researcher |
+| Supervisor Name (if present) | Optional supervisor name, shown on team cards |
 | role outside (if any) | Optional secondary role |
 | short bio | Biography text (truncated on team page with “Read more”) |
 | publication list (at Lab) | Google Scholar or personal website URL |
@@ -220,7 +221,7 @@ python3 scripts/sync_from_xlsx.py
 **Notes:**
 
 - Rows with **Co-Director** in “role in the lab” populate the home page and `_data/lab.yml` (not the team page).
-- Other members are grouped into postdocs, PhD students, master's students, or collaborators based on role keywords, sorted alphabetically by first name.
+- Other members are grouped into postdocs, PhD students, master's students, collaborators, or visiting scholars based on role keywords, sorted alphabetically by first name. Supervisor names are shown on team cards; member emails are not published on the site.
 - Profile images embedded in the spreadsheet are extracted automatically; otherwise a placeholder is used.
 
 ---

@@ -1,37 +1,63 @@
 postdocs:
+- name: Dr. Dawit Mekonen
+  role: Postdoctoral Researcher
+  photo: /assets/images/team/placeholder.svg
+  supervisor: Christo Elmore
+  bio: |-
+    Dawit Mekonen (PhD) is a health researcher and postdoctoral fellow at York University. His research interests centre on disability-inclusive perinatal care, maternal and reproductive health, health equity, and the use of digital health and artificial intelligence to improve access to care for people with disabilities. He holds a PhD in Rehabilitation Science from Queen’s University, where his doctoral research examined access to perinatal care among women with physical disabilities in rural Ethiopia. His current postdoctoral research focuses on the development of PeriCare, an AI-powered mobile health application designed to support perinatal care for women with disabilities, in partnership with Independent Living Canada. His broader research interests include disability inclusion in health systems, equitable access to maternal healthcare, patient-centred care, and the development of inclusive digital health interventions.
+- name: Dr. Debanjan Borthakur
+  role: Postdoctoral Researcher
+  photo: /assets/images/team/debanjan-borthakur.png
+  supervisor: Vijay Mago
+  bio: |-
+    Dr. Debanjan Borthakur is a behavioural scientist and Connected Minds postdoctoral researcher at York University, Canada. He received his PhD in Psychology from the University of Toronto, where his research examined how fairness, trust, and moral judgments change when people interact with artificial intelligence rather than humans. His broader research interests include the psychology of human–AI interaction, moral psychology, digital health, AI in healthcare, psychophysiology, and responsible AI. He has also taught courses in social psychology, intergroup relations, and the psychology and physiology of emotion at the University of Toronto.
 - name: Dr. Frederic Fu
   role: Postdoctoral Researcher, Course Director, SHPM
   photo: /assets/images/team/frederic-fu.png
-  email: fredpfu@yorku.ca
+  supervisor: Vijay Mago
   bio: |-
     Dr. Frederic Pengfei Fu is a Postdoctoral Researcher and Course Director in the School of Health Policy and Management at York University. His research focuses on mental health, health equity, and the use of artificial intelligence and health data analytics to understand health risks among underserved and underrepresented populations. A major area of his work examines mental health, disability, substance use, and access to health and social services among people experiencing homelessness, using population-based and administrative data such as Point-in-Time Counts and the Homeless Individuals and Families Information System. His broader research also explores the responsible and equitable use of artificial intelligence in healthcare, including public attitudes toward AI, algorithmic equity, and the social factors that shape people’s ability to benefit from emerging technologies. His work combines epidemiological and statistical methods, machine learning, evidence synthesis, and community-engaged research, with an emphasis on translating research findings into health policy and practice.
 phd_students:
 - name: Arunim Garg
   role: PhD student
   photo: /assets/images/team/arunim-garg.jpg
-  email: arunim@yorku.ca
   affiliation: Lecturer
+  supervisor: Vijay Mago
   bio: |-
     Arunim Garg is a PhD student in Health Systems Management and Health Data Analytics at York University and an EPIC-AT Fellow (AGE-WELL). His research builds and evaluates multilingual conversational health AI to help older adults navigate care in their own languages, with an emphasis on low-resource languages that mainstream tools overlook. He is also a lecturer and curriculum designer at Acsenda School of Management, where he led the design of its AI & Business Analytics concentration, and holds a master's in Artificial Intelligence from Lakehead University.
+- name: John Muteba
+  role: PhD student
+  photo: /assets/images/team/john-muteba.png
+  supervisor: Vijay Mago
+  bio: |-
+    John investigates algorithmic fairness, bias, and equity in clinical Large Language Models and AI-enabled decision-support systems. His research integrates advanced statistical methods, including Bayesian networks and mediation analysis, with intersectional patient data to evaluate demographic disparities in AI-assisted chest pain assessment and diagnosis. His work focuses on identifying, quantifying, and mitigating systematic bias in medical AI, with the broader goal of ensuring that clinical artificial intelligence is statistically rigorous, clinically reliable, and equitable across diverse patient populations.
 - name: Mila Kolpashnikova
   role: PhD student
   photo: /assets/images/team/placeholder.svg
-  email: klambert@yorku.ca
   affiliation: Senior AI Developer
+  supervisor: Vijay Mago
   bio: |-
     Senior AI Developer at a Toronto-based startup, specializing in the design and evaluation of agentic workflows and Retrieval-Augmented Generation (RAG) systems. Current research explores AI system architectures and platform sovereignty.
 - name: Yash Amethiya
   role: PhD student
   photo: /assets/images/team/yash-amethiya.png
-  email: yamethiy@yorku.ca
   affiliation: Software Developer
+  supervisor: Vijay Mago
   bio: |-
     Yash Amethiya is pursuing PhD in Health (specialized in Health System Management and Health Data Analytics) at York University. His research focuses on introducing design disciplines to Electronic Health Records (EHRs) and Healthcare. By moving beyond traditional widget based EHRs, his work aims to reduce clinician burnout, optimize cognitive load, and encourage dynamic learning health systems.Further, his research emphasizes the application of neurosymbolic artificial intelligence in healthcare, combining transparent symbolic logic and human in the loop guardrails rather than relying on standard black box AI models. He is also a Software Developer at Aurora Constellations, where he leads the development of the prototype for the same research.
 masters_students: []
-collaborators: []
-alumni:
-- name: Former Student
-  role: PhD Alumni
-  affiliation: Industry Research Lab
-  photo: /assets/images/team/placeholder.svg
-  bio: Now a data scientist applying health informatics methods in industry.
+collaborators:
+- name: Andrew Fisher
+  role: Collaborator
+  photo: /assets/images/team/andrew-fisher.jpg
+  affiliation: Assistant Professor
+  bio: |-
+    Andrew Fisher obtained an Honours BSc from Brandon University in 2019 and began his MSc with a specialization in artificial intelligence at Lakehead University. His studies were supported by a SSHRC Grant and a Mitacs Globalink Research Award. In January 2021, he began a PhD at Saint Mary’s University, supported by a Mitacs Accelerate award and an industry partner in the construction sector, where he developed machine learning solutions to automate production workflows. His thesis was recognized with the J. Kevin Vessey Award for the Ph.D. in Applied Science. Andrew was then a Postdoctoral Visitor at York University, funded by the Connected Minds CFREF, where he focused on using large language models to improve the accessibility of health information. Currently, he is an Assistant Professor in the Faculty of Computer Science at the University of New Brunswick.
+visiting_scholars:
+- name: Marco A. Serrano
+  role: Visiting Scholar
+  photo: /assets/images/team/marco-a-serrano.png
+  affiliation: CTO
+  supervisor: Vijay Mago
+  bio: |-
+    Marco Antonio Serrano Saavedra is a PhD candidate in Advanced Information Technologies at the University of Castilla-La Mancha (UCLM), with over 15 years of professional experience in data, analytics, cloud technologies, and artificial intelligence. His current research focuses on clinical AI and the development of multimodal predictive models for clinically significant prostate cancer, integrating structured clinical data, natural language processing, and medical imaging. His research interests include clinical machine learning, multimodal learning, quantitative imaging biomarkers, model validation and calibration, and translational AI for clinical decision support. He is also CTO at Medithink, where he leads the development of AI solutions for healthcare.

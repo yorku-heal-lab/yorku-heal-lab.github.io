@@ -8,8 +8,14 @@ directors:
   department: School of Health Policy and Management
   faculty: Faculty of Health, York University
   photo: /assets/images/team/vijay-mago.jpg
-  short_bio: |-
-    Dr. Vijay Mago is an Associate Professor and Chair of the School of Health Policy and Management at York University. His interdisciplinary research program focuses on artificial intelligence, machine learning, natural language processing, and large language models, with applications in health and healthcare,...
+  bio: >-
+    Dr. Vijay Mago is an Associate Professor and Chair of the School of Health Policy and Management at York University. His interdisciplinary research program focuses on artificial intelligence, machine learning, natural language processing, and large language models, with applications in health and healthcare, including public health surveillance, cardiac care, health equity, and clinical and health-system decision support. He has been involved in more than 42 funded research projects totaling over $7.2 million, reflecting sustained success in building collaborative and externally supported research programs.
+
+
+    Dr. Mago has authored more than 110 peer-reviewed publications, including 60 journal articles, 46 conference papers, and six book chapters, and has co-edited six books. Student mentorship is a major component of his academic work. He has supervised or co-supervised more than 30 master’s and doctoral students and postdoctoral fellows across several institutions, including 23 master’s thesis students, five doctoral students, and six postdoctoral fellows.
+
+
+    Alongside his research, Dr. Mago has held substantial academic leadership roles. He currently serves as Chair of the School of Health Policy and Management at York University and previously served as Chair of the Department of Computer Science, Graduate Program Coordinator, and Faculty Research Chair at Lakehead University. His career reflects a strong commitment to interdisciplinary research, graduate training, and academic leadership, with a focus on translating advances in AI and data science into meaningful health and societal impact.
   email: vmago@yorku.ca
   website: https://scholar.google.ca/citations?user=lotIW94AAAAJ&hl=en&oi=ao
 contact:

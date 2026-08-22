@@ -5,6 +5,16 @@ permalink: /team/
 subtitle: Meet the people behind HEAL Lab.
 ---
 
+{% if site.data.team.collaborators.size > 0 %}
+## Collaborators
+
+<div class="team-grid">
+{% for member in site.data.team.collaborators %}
+  {% include team-member.html member=member %}
+{% endfor %}
+</div>
+{% endif %}
+
 {% if site.data.team.postdocs.size > 0 %}
 ## Postdoctoral Researchers
 
@@ -35,21 +45,11 @@ subtitle: Meet the people behind HEAL Lab.
 </div>
 {% endif %}
 
-{% if site.data.team.collaborators.size > 0 %}
-## Collaborators
+{% if site.data.team.visiting_scholars.size > 0 %}
+## Visiting Scholars
 
 <div class="team-grid">
-{% for member in site.data.team.collaborators %}
-  {% include team-member.html member=member %}
-{% endfor %}
-</div>
-{% endif %}
-
-{% if site.data.team.alumni.size > 0 %}
-## Alumni
-
-<div class="team-grid team-grid--alumni">
-{% for member in site.data.team.alumni %}
+{% for member in site.data.team.visiting_scholars %}
   {% include team-member.html member=member %}
 {% endfor %}
 </div>
