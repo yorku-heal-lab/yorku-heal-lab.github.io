@@ -14,11 +14,5 @@ sections:
 - title: Current Projects
   format: list
   items:
-  - title: Ethical LLMs in Healthcare
-    description: Studying fairness, transparency, and governance of large language models in clinical contexts.
-  - title: HEAL-Summ
-    description: Frameworks for health information summarization and evidence synthesis.
-    url: https://github.com/heal-lab/heal-summ
   - title: Health Systems Simulation
     description: Agent-based models for policy evaluation and resource allocation.
-    url: https://github.com/heal-lab/health-systems-simulation
