@@ -102,16 +102,17 @@ def read_resource_rows(xlsx_path: Path) -> tuple[list[dict], list[str]]:
         if not section and not name and not description and not url:
             continue
 
-        if not section or not name or not description or not url:
-            warnings.append(f"Row {row_number}: skipped entry missing section, name, description, or url")
+        if not section or not name or not description:
+            warnings.append(f"Row {row_number}: skipped entry missing section, name, or description")
             continue
 
         item = {
             "section": section,
             "name": name,
             "description": description,
-            "url": url,
         }
+        if url:
+            item["url"] = url
         if tags:
             item["tags"] = tags
 
@@ -128,8 +129,9 @@ def build_sections(items: list[dict]) -> list[dict]:
         resource = {
             "name": item["name"],
             "description": item["description"],
-            "url": item["url"],
         }
+        if item.get("url"):
+            resource["url"] = item["url"]
         if item.get("tags"):
             resource["tags"] = item["tags"]
 

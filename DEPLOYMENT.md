@@ -274,7 +274,7 @@ Dates accept `YYYY-MM-DD` or common formats like `MM/DD/YYYY`. Items are sorted 
 python3 scripts/sync_resources_from_xlsx.py
 ```
 
-**Columns:** `section`, `name`, `description`, `url`, `tags` (optional — separate with `;`, `,`, or newlines)
+**Columns:** `section`, `name`, `description`, `url` (optional), `tags` (optional — separate with `;`, `,`, or newlines)
 
 Sections keep spreadsheet order; items within each section are sorted alphabetically by name.
 
