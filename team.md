@@ -5,6 +5,17 @@ permalink: /team/
 subtitle: Meet the people behind HEAL Lab.
 ---
 
+{% if site.data.lab.directors.size > 0 %}
+<section class="leadership-section">
+  <h2>Leadership</h2>
+  <div class="directors-grid">
+    {% for director in site.data.lab.directors %}
+      {% include director-card.html director=director %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
 {% if site.data.team.collaborators.size > 0 %}
 ## Collaborators
 

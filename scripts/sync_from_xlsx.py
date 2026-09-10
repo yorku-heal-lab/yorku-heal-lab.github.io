@@ -103,10 +103,28 @@ def is_co_director(role_in_lab: str) -> bool:
     return "co-director" in role_in_lab.lower()
 
 
+def is_lab_leadership(role_in_lab: str) -> bool:
+    lowered = role_in_lab.lower().strip()
+    if is_co_director(lowered):
+        return True
+    if lowered == "director" or lowered.startswith("director,"):
+        return True
+    return False
+
+
+def leadership_role_label(role_in_lab: str) -> str:
+    if is_co_director(role_in_lab):
+        return "Co-Director"
+    lowered = role_in_lab.lower().strip()
+    if lowered == "director" or lowered.startswith("director,"):
+        return "Director"
+    return "Co-Director"
+
+
 def classify_team_group(role_in_lab: str) -> str | None:
     lowered = role_in_lab.lower()
 
-    if is_co_director(lowered):
+    if is_lab_leadership(lowered):
         return None
     if "collaborator" in lowered:
         return "collaborators"
@@ -339,7 +357,7 @@ def build_director(record: dict[str, str], photo: str) -> dict:
     bio = record["bio"]
     director = {
         "name": display_name(record["name"], bio, role_in_lab),
-        "role": "Co-Director",
+        "role": leadership_role_label(role_in_lab),
         "title": parse_director_title(role_in_lab),
         "department": DEFAULT_DEPARTMENT,
         "faculty": DEFAULT_FACULTY,
@@ -414,7 +432,7 @@ def main() -> int:
         photo = resolve_photo_path(record, sheet_images, args.xlsx, args.dry_run, photo_warnings)
         role_in_lab = record["role_in_lab"]
 
-        if is_co_director(role_in_lab):
+        if is_lab_leadership(role_in_lab):
             co_directors.append(build_director(record, photo))
             continue
 
@@ -431,7 +449,7 @@ def main() -> int:
     sheet_summary = ", ".join(f"{name} ({count})" for name, count in sheet_counts.items())
     print(f"Parsed {len(rows)} unique people from {args.xlsx.name}")
     print(f"Sheets: {sheet_summary}")
-    print(f"Co-directors ({len(co_directors)}): {', '.join(d['name'] for d in co_directors) or 'none'}")
+    print(f"Leadership ({len(co_directors)}): {', '.join(d['name'] for d in co_directors) or 'none'}")
     for group in TEAM_GROUPS:
         members = team_groups[group]
         label = group.replace("_", " ")

@@ -2,15 +2,6 @@
 layout: default
 ---
 <div class="container home-layout">
-  <section class="directors-section">
-    <h2>Co-Directors</h2>
-    <div class="directors-grid">
-      {% for director in site.data.lab.directors %}
-        {% include director-card.html director=director %}
-      {% endfor %}
-    </div>
-  </section>
-
   <div class="home-body">
     {% include lab-contact-sidebar.html %}
 
