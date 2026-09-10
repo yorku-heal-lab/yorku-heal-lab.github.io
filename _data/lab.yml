@@ -41,9 +41,7 @@ contact:
   phone: +1 (416) 736-2100
 bio:
 - >
-  The Health, Evidence, Analytics & Learning (HEAL) Lab at York University brings together researchers working at the intersection of health informatics, artificial intelligence, and data science. Our work spans natural language processing, health data analytics, complex systems modelling, and the responsible use of AI in healthcare and policy.
-- >
-  HEAL Lab co-directors lead interdisciplinary projects with clinical, community, and industry partners, with an emphasis on health equity, evidence synthesis, and translating research into practice.
+  The Health Equity and AI Lab (HEAL) envisions a Canada where Artificial Intelligence (AI) serves as a powerful tool for social justice, actively reducing disparities and promoting inclusion for all citizens while adhering to principles of fairness. HEAL's research is structured around two main pillars: leveraging AI to promote equity and reduce health disparities, and integrating fairness principles into AI models to align with diverse health applications. The program involves collecting and aggregating various types of health data from across Canada, including clinical, biological, social, environmental, and administrative data from hospitals, government surveys, public health platforms, and wearable devices. A groundbreaking initiative of HEAL is the development and implementation of advanced machine learning and foundation models to analyze multimodal health data, alongside innovative approaches to embed fairness into predictive health models. In the short term, HEAL will create technology and repositories for fair analysis of complex and multimodal health data to understand the relationship between disparity determinants and health outcomes in Canada. In the long term, HEAL will develop toolkits and knowledge frameworks to inform policy recommendations, improving healthcare access and outcomes, especially for RESE (racialized, ethnic and socio-econ) groups across Canada.
 research_interests:
 - Health Informatics
 - Natural Language Processing
