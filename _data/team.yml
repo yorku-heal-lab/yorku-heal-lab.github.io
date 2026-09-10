@@ -1,3 +1,36 @@
+leadership:
+- name: Dr. Christo El Morr
+  role: Co-Director
+  title: Associate Professor and Chair, Professor
+  department: School of Health Policy and Management
+  faculty: Faculty of Health, York University
+  photo: /assets/images/team/christo-el-morr.png
+  bio: >-
+    Christo El Morr, PhD, is a Professor of Health Informatics and the Director of the Centre for Feminist Research (CFR) at York University. He is also a Research Scientist at North York General Hospital, Toronto. Additionally, he serves as the Health Informatics Certificate Coordinator and is a former Graduate Program Director and Undergraduate Program Director at the School of Health Policy and Management at York University.
+
+
+    His research aligns with an Equity Informatics perspective, covering areas such as Equity AI (e.g., patient readmission, disability advocacy), Patient-Centered Virtual Care (e.g., chronic disease management, mental health), Global Health Promotion for equity (e.g., equitable health promotion), and Human Rights Monitoring (e.g., disability rights, Gender-Based Violence). Dr. El Morr is founding member of several organizations, and serves as a member of the scientific committee for several health informatics journals and conferences.
+
+
+    In Arabic, Dr. El Morr is also a novelist, poet, and theologian. He frequently contributes to Lebanese newspapers and has published 10 books on theology, including on Palestine. His intellectual contributions to social justice advocate for the pursuit of freedom from oppression, freedom from exploitation, and the freedom to celebrate life.
+  email: elmorr@yorku.ca
+  website: https://scholar.google.ca/citations?user=_X58b2IAAAAJ&hl=en
+- name: Dr. Vijay Mago
+  role: Co-Director
+  title: Associate Professor and Chair, SHPM
+  department: School of Health Policy and Management
+  faculty: Faculty of Health, York University
+  photo: /assets/images/team/vijay-mago.jpeg
+  bio: >-
+    Dr. Vijay Mago is an Associate Professor and Chair of the School of Health Policy and Management at York University. His interdisciplinary research program focuses on artificial intelligence, machine learning, natural language processing, and large language models, with applications in health and healthcare, including public health surveillance, cardiac care, health equity, and clinical and health-system decision support. He has been involved in more than 42 funded research projects totaling over $7.2 million, reflecting sustained success in building collaborative and externally supported research programs.
+
+
+    Dr. Mago has authored more than 110 peer-reviewed publications, including 60 journal articles, 46 conference papers, and six book chapters, and has co-edited six books. Student mentorship is a major component of his academic work. He has supervised or co-supervised more than 30 master’s and doctoral students and postdoctoral fellows across several institutions, including 23 master’s thesis students, five doctoral students, and six postdoctoral fellows.
+
+
+    Alongside his research, Dr. Mago has held substantial academic leadership roles. He currently serves as Chair of the School of Health Policy and Management at York University and previously served as Chair of the Department of Computer Science, Graduate Program Coordinator, and Faculty Research Chair at Lakehead University. His career reflects a strong commitment to interdisciplinary research, graduate training, and academic leadership, with a focus on translating advances in AI and data science into meaningful health and societal impact.
+  email: vmago@yorku.ca
+  website: https://scholar.google.ca/citations?user=lotIW94AAAAJ&hl=en&oi=ao
 collaborators:
 - name: Andrew Fisher
   role: Collaborator
@@ -32,7 +65,6 @@ phd_students:
 - name: Arunim Garg
   role: PhD student
   photo: /assets/images/team/arunim-garg.jpeg
-  affiliation: Lecturer
   supervisor: Vijay Mago
   bio: |-
     Arunim Garg is a PhD student in Health Systems Management and Health Data Analytics at York University and an EPIC-AT Fellow (AGE-WELL). His research builds and evaluates multilingual conversational health AI to help older adults navigate care in their own languages, with an emphasis on low-resource languages that mainstream tools overlook. He is also a lecturer and curriculum designer at Acsenda School of Management, where he led the design of its AI & Business Analytics concentration, and holds a master's in Artificial Intelligence from Lakehead University.
@@ -45,7 +77,6 @@ phd_students:
 - name: Mila Kolpashnikova
   role: PhD student
   photo: /assets/images/team/placeholder.svg
-  affiliation: Senior AI Developer
   supervisor: Vijay Mago
   bio: |-
     Senior AI Developer at a Toronto-based startup, specializing in the design and evaluation of agentic workflows and Retrieval-Augmented Generation (RAG) systems. Current research explores AI system architectures and platform sovereignty.
@@ -57,7 +88,6 @@ phd_students:
 - name: Vaibhav Sawhney
   role: PhD Student
   photo: /assets/images/team/vaibhav-sawhney.jpg
-  affiliation: Manager- Data & Quality
   supervisor: Christo El Morr
   bio: >-
     Vaibhav Sawhney is a PhD researcher in Health Systems Management and Health Data Analytics at York University. He previously completed a Master’s in Health Systems Management and Health Data Analytics, with a research focus on the ethical use of generative AI in addressing disability-related challenges. He also holds a BA (Honours) in Health Studies, graduating summa cum laude.
@@ -67,7 +97,6 @@ phd_students:
 - name: Yash Amethiya
   role: PhD student
   photo: /assets/images/team/yash-amethiya.png
-  affiliation: Software Developer
   supervisor: Vijay Mago
   bio: |-
     Yash Amethiya is pursuing PhD in Health (specialized in Health System Management and Health Data Analytics) at York University. His research, funded by Connected Minds CFREF, focuses on introducing design disciplines to Electronic Health Records (EHRs) and Healthcare. By moving beyond traditional widget based EHRs, his work aims to reduce clinician burnout, optimize cognitive load, and encourage dynamic learning health systems.Further, his research emphasizes the application of neurosymbolic artificial intelligence in healthcare, combining transparent symbolic logic and human in the loop guardrails rather than relying on standard black box AI models. He is also a Software Developer at Aurora Constellations, where he leads the development of the prototype for the same research.
@@ -85,7 +114,6 @@ visiting_scholars:
 - name: Marco A. Serrano
   role: Visiting Scholar
   photo: /assets/images/team/marco-a-serrano.png
-  affiliation: CTO
   supervisor: Vijay Mago
   bio: |-
     Marco Antonio Serrano Saavedra is a PhD candidate in Advanced Information Technologies at the University of Castilla-La Mancha (UCLM), with over 15 years of professional experience in data, analytics, cloud technologies, and artificial intelligence. His current research focuses on clinical AI and the development of multimodal predictive models for clinically significant prostate cancer, integrating structured clinical data, natural language processing, and medical imaging. His research interests include clinical machine learning, multimodal learning, quantitative imaging biomarkers, model validation and calibration, and translational AI for clinical decision support. He is also CTO at Medithink, where he leads the development of AI solutions for healthcare.

@@ -1,0 +1,14 @@
+{% assign leaders = include.leaders %}
+{% if leaders == nil or leaders.size == 0 %}
+  {% assign leaders = site.data.lab.directors %}
+{% endif %}
+{% if leaders and leaders.size > 0 %}
+<section class="leadership-section">
+  <h2>Leadership</h2>
+  <div class="directors-grid">
+    {% for director in leaders %}
+      {% include director-card.html director=director %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

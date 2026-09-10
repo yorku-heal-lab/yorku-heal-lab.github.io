@@ -372,7 +372,7 @@ def build_director(record: dict[str, str], photo: str) -> dict:
     return director
 
 
-def build_team_member(record: dict[str, str], photo: str) -> dict:
+def build_team_member(record: dict[str, str], photo: str, *, include_affiliation: bool = False) -> dict:
     role_in_lab = record["role_in_lab"]
     bio = record["bio"]
     member = {
@@ -380,7 +380,7 @@ def build_team_member(record: dict[str, str], photo: str) -> dict:
         "role": role_in_lab,
         "photo": photo,
     }
-    if record["role_outside"]:
+    if include_affiliation and record["role_outside"]:
         member["affiliation"] = record["role_outside"]
     if record.get("supervisor"):
         member["supervisor"] = record["supervisor"]
@@ -403,10 +403,15 @@ def merge_lab_data(existing: dict, directors: list[dict]) -> dict:
     return lab_data
 
 
-def merge_team_data(existing: dict, grouped_members: dict[str, list[dict]]) -> dict:
-    return {
-        group: sort_by_first_name(grouped_members.get(group, [])) for group in TEAM_GROUPS
-    }
+def merge_team_data(
+    grouped_members: dict[str, list[dict]],
+    leadership: list[dict],
+) -> dict:
+    team_data = {"leadership": sort_by_first_name(leadership)}
+    team_data.update(
+        {group: sort_by_first_name(grouped_members.get(group, [])) for group in TEAM_GROUPS}
+    )
+    return team_data
 
 
 def empty_team_groups() -> dict[str, list[dict]]:
@@ -441,10 +446,16 @@ def main() -> int:
             uncategorized.append(f"{record['name']} ({role_in_lab})")
             continue
 
-        team_groups[group].append(build_team_member(record, photo))
+        team_groups[group].append(
+            build_team_member(
+                record,
+                photo,
+                include_affiliation=(group == "collaborators"),
+            )
+        )
 
     lab_data = merge_lab_data(load_yaml(args.lab_yml), sort_by_first_name(co_directors))
-    team_data = merge_team_data(load_yaml(args.team_yml), team_groups)
+    team_data = merge_team_data(team_groups, sort_by_first_name(co_directors))
 
     sheet_summary = ", ".join(f"{name} ({count})" for name, count in sheet_counts.items())
     print(f"Parsed {len(rows)} unique people from {args.xlsx.name}")
