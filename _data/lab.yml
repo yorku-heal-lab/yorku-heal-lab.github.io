@@ -2,12 +2,28 @@ name: HEAL Lab
 tagline: Health Informatics and Analytics Research
 full_name: Health, Evidence, Analytics & Learning Lab
 directors:
+- name: Dr. Christo El Morr
+  role: Co-Director
+  title: Associate Professor and Chair, Professor
+  department: School of Health Policy and Management
+  faculty: Faculty of Health, York University
+  photo: /assets/images/team/christo-el-morr.png
+  bio: >-
+    Christo El Morr, PhD, is a Professor of Health Informatics and the Director of the Centre for Feminist Research (CFR) at York University. He is also a Research Scientist at North York General Hospital, Toronto. Additionally, he serves as the Health Informatics Certificate Coordinator and is a former Graduate Program Director and Undergraduate Program Director at the School of Health Policy and Management at York University.
+
+
+    His research aligns with an Equity Informatics perspective, covering areas such as Equity AI (e.g., patient readmission, disability advocacy), Patient-Centered Virtual Care (e.g., chronic disease management, mental health), Global Health Promotion for equity (e.g., equitable health promotion), and Human Rights Monitoring (e.g., disability rights, Gender-Based Violence). Dr. El Morr is founding member of several organizations, and serves as a member of the scientific committee for several health informatics journals and conferences.
+
+
+    In Arabic, Dr. El Morr is also a novelist, poet, and theologian. He frequently contributes to Lebanese newspapers and has published 10 books on theology, including on Palestine. His intellectual contributions to social justice advocate for the pursuit of freedom from oppression, freedom from exploitation, and the freedom to celebrate life.
+  email: elmorr@yorku.ca
+  website: https://scholar.google.ca/citations?user=_X58b2IAAAAJ&hl=en
 - name: Dr. Vijay Mago
   role: Co-Director
   title: Associate Professor and Chair, SHPM
   department: School of Health Policy and Management
   faculty: Faculty of Health, York University
-  photo: /assets/images/team/vijay-mago.jpg
+  photo: /assets/images/team/vijay-mago.jpeg
   bio: >-
     Dr. Vijay Mago is an Associate Professor and Chair of the School of Health Policy and Management at York University. His interdisciplinary research program focuses on artificial intelligence, machine learning, natural language processing, and large language models, with applications in health and healthcare, including public health surveillance, cardiac care, health equity, and clinical and health-system decision support. He has been involved in more than 42 funded research projects totaling over $7.2 million, reflecting sustained success in building collaborative and externally supported research programs.
 
@@ -19,7 +35,7 @@ directors:
   email: vmago@yorku.ca
   website: https://scholar.google.ca/citations?user=lotIW94AAAAJ&hl=en&oi=ao
 contact:
-  email: vmago@yorku.ca
+  email: elmorr@yorku.ca
   office: 340 Stong College, Keele Campus
   address: 4700 Keele Street, Toronto, ON M3J 1P3, Canada
   phone: +1 (416) 736-2100

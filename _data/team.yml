@@ -1,8 +1,19 @@
+collaborators:
+- name: Andrew Fisher
+  role: Collaborator
+  photo: /assets/images/team/andrew-fisher.jpeg
+  affiliation: Assistant Professor
+  bio: |-
+    Andrew Fisher obtained an Honours BSc from Brandon University in 2019 and began his MSc with a specialization in artificial intelligence at Lakehead University. His studies were supported by a SSHRC Grant and a Mitacs Globalink Research Award. In January 2021, he began a PhD at Saint Mary’s University, supported by a Mitacs Accelerate award and an industry partner in the construction sector, where he developed machine learning solutions to automate production workflows. His thesis was recognized with the J. Kevin Vessey Award for the Ph.D. in Applied Science. Andrew was then a Postdoctoral Visitor at York University, funded by the Connected Minds CFREF, where he focused on using large language models to improve the accessibility of health information. Currently, he is an Assistant Professor in the Faculty of Computer Science at the University of New Brunswick.
+- name: Nikita Neveditsin
+  role: Collaborator
+  photo: /assets/images/team/placeholder.svg
+  affiliation: Assistant Professor
 postdocs:
 - name: Dr. Dawit Mekonen
   role: Postdoctoral Researcher
   photo: /assets/images/team/placeholder.svg
-  supervisor: Christo Elmore
+  supervisor: Christo El Morr
   bio: |-
     Dawit Mekonen (PhD) is a health researcher and postdoctoral fellow at York University. His research interests centre on disability-inclusive perinatal care, maternal and reproductive health, health equity, and the use of digital health and artificial intelligence to improve access to care for people with disabilities. He holds a PhD in Rehabilitation Science from Queen’s University, where his doctoral research examined access to perinatal care among women with physical disabilities in rural Ethiopia. His current postdoctoral research focuses on the development of PeriCare, an AI-powered mobile health application designed to support perinatal care for women with disabilities, in partnership with Independent Living Canada. His broader research interests include disability inclusion in health systems, equitable access to maternal healthcare, patient-centred care, and the development of inclusive digital health interventions.
 - name: Dr. Debanjan Borthakur
@@ -20,7 +31,7 @@ postdocs:
 phd_students:
 - name: Arunim Garg
   role: PhD student
-  photo: /assets/images/team/arunim-garg.jpg
+  photo: /assets/images/team/arunim-garg.jpeg
   affiliation: Lecturer
   supervisor: Vijay Mago
   bio: |-
@@ -38,21 +49,38 @@ phd_students:
   supervisor: Vijay Mago
   bio: |-
     Senior AI Developer at a Toronto-based startup, specializing in the design and evaluation of agentic workflows and Retrieval-Augmented Generation (RAG) systems. Current research explores AI system architectures and platform sovereignty.
+- name: Siyuan (Sabrina) Gao
+  role: PhD student
+  photo: /assets/images/team/siyuan-sabrina-gao.jpg
+  supervisor: Christo El Morr
+  bio: "Siyuan (Sabrina) Gao is a PhD student in Global Health at York University. She is also a member of Connected Minds. \nHer research focuses on digital mental health and algorithmic platforms, with attention to how algorithmically recommended mental-health content shapes psychosocial distress, stigma, family communication, cultural belonging, and help-seeking among second-generation Chinese Canadian youth. Her current research combines mixed methods and longitudinal qualitative research to examine how youth interpret, adopt, negotiate, or resist online narratives of distress and how platform algorithms may shape norms and relationships within diasporic communities."
+- name: Vaibhav Sawhney
+  role: PhD Student
+  photo: /assets/images/team/vaibhav-sawhney.jpg
+  affiliation: Manager- Data & Quality
+  supervisor: Christo El Morr
+  bio: >-
+    Vaibhav Sawhney is a PhD researcher in Health Systems Management and Health Data Analytics at York University. He previously completed a Master’s in Health Systems Management and Health Data Analytics, with a research focus on the ethical use of generative AI in addressing disability-related challenges. He also holds a BA (Honours) in Health Studies, graduating summa cum laude.
+
+
+    His research interests lie at the intersection of artificial intelligence, health data analytics, public health, and health equity, with a particular focus on the use of AI for public health surveillance and decision-making. Alongside his academic work, Vaibhav works in health data and quality management and community-based health promotion, bringing an applied health systems perspective to his research.
 - name: Yash Amethiya
   role: PhD student
   photo: /assets/images/team/yash-amethiya.png
   affiliation: Software Developer
   supervisor: Vijay Mago
   bio: |-
-    Yash Amethiya is pursuing PhD in Health (specialized in Health System Management and Health Data Analytics) at York University. His research focuses on introducing design disciplines to Electronic Health Records (EHRs) and Healthcare. By moving beyond traditional widget based EHRs, his work aims to reduce clinician burnout, optimize cognitive load, and encourage dynamic learning health systems.Further, his research emphasizes the application of neurosymbolic artificial intelligence in healthcare, combining transparent symbolic logic and human in the loop guardrails rather than relying on standard black box AI models. He is also a Software Developer at Aurora Constellations, where he leads the development of the prototype for the same research.
-masters_students: []
-collaborators:
-- name: Andrew Fisher
-  role: Collaborator
-  photo: /assets/images/team/andrew-fisher.jpg
-  affiliation: Assistant Professor
-  bio: |-
-    Andrew Fisher obtained an Honours BSc from Brandon University in 2019 and began his MSc with a specialization in artificial intelligence at Lakehead University. His studies were supported by a SSHRC Grant and a Mitacs Globalink Research Award. In January 2021, he began a PhD at Saint Mary’s University, supported by a Mitacs Accelerate award and an industry partner in the construction sector, where he developed machine learning solutions to automate production workflows. His thesis was recognized with the J. Kevin Vessey Award for the Ph.D. in Applied Science. Andrew was then a Postdoctoral Visitor at York University, funded by the Connected Minds CFREF, where he focused on using large language models to improve the accessibility of health information. Currently, he is an Assistant Professor in the Faculty of Computer Science at the University of New Brunswick.
+    Yash Amethiya is pursuing PhD in Health (specialized in Health System Management and Health Data Analytics) at York University. His research, funded by Connected Minds CFREF, focuses on introducing design disciplines to Electronic Health Records (EHRs) and Healthcare. By moving beyond traditional widget based EHRs, his work aims to reduce clinician burnout, optimize cognitive load, and encourage dynamic learning health systems.Further, his research emphasizes the application of neurosymbolic artificial intelligence in healthcare, combining transparent symbolic logic and human in the loop guardrails rather than relying on standard black box AI models. He is also a Software Developer at Aurora Constellations, where he leads the development of the prototype for the same research.
+masters_students:
+- name: Rawan Dabboussi
+  role: MA Student
+  photo: /assets/images/team/rawan-dabboussi.jpg
+  supervisor: Christo El Morr
+  bio: >-
+    Rawan Dabboussi is an MA student in Critical Disability Studies at York University. She holds a BSc in Biochemistry and a Master's degree in Applied Biotechnology, with a research background in molecular science.
+
+
+    Her emerging research interests explore the intersection of artificial intelligence, disability, and health and social care, particularly how AI-enabled technologies may shape accessibility, autonomy, equity, and the experiences of people with disabilities.
 visiting_scholars:
 - name: Marco A. Serrano
   role: Visiting Scholar

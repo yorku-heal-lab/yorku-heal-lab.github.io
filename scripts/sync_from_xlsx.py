@@ -7,8 +7,10 @@ import argparse
 import re
 import shutil
 import sys
-import zipfile
+import urllib.error
+import urllib.request
 from pathlib import Path
+from typing import Any
 
 import openpyxl
 import yaml
@@ -114,7 +116,12 @@ def classify_team_group(role_in_lab: str) -> str | None:
         return "postdocs"
     if re.search(r"\bph\.?\s*d\.?\b", lowered) or "phd" in lowered or "doctoral" in lowered:
         return "phd_students"
-    if re.search(r"\bm\.?\s*(sc|a)\.?\b", lowered) or "master" in lowered or "msc" in lowered:
+    if (
+        "ma student" in lowered
+        or re.search(r"\bm\.?\s*(sc|a)\.?\b", lowered)
+        or "master" in lowered
+        or "msc" in lowered
+    ):
         return "masters_students"
 
     return None
@@ -168,34 +175,70 @@ def resolve_column_index(header_index: dict[str, int], labels: tuple[str, ...]) 
     return None
 
 
-def read_rows(xlsx_path: Path) -> tuple[list[str], list[dict[str, str]], dict[int, str]]:
-    workbook = openpyxl.load_workbook(xlsx_path)
-    worksheet = workbook.active
+def normalize_person_key(name: str) -> str:
+    cleaned = re.sub(r"^Dr\.?\s+", "", name, flags=re.IGNORECASE)
+    return re.sub(r"[^a-z0-9]+", "", cleaned.lower())
 
+
+def parse_sheet_rows(worksheet: Any) -> list[dict[str, str]]:
     headers = [normalize(cell.value) for cell in next(worksheet.iter_rows(min_row=1, max_row=1))]
     header_index = {header: idx for idx, header in enumerate(headers)}
 
     missing = [label for label in COLUMNS.values() if label not in header_index]
     if missing:
-        raise ValueError(f"Missing expected columns in spreadsheet: {', '.join(missing)}")
+        raise ValueError(
+            f"Sheet '{worksheet.title}' is missing expected columns: {', '.join(missing)}"
+        )
 
     supervisor_index = resolve_column_index(header_index, SUPERVISOR_HEADERS)
-
     rows: list[dict[str, str]] = []
+
     for excel_row, row in enumerate(worksheet.iter_rows(min_row=2, values_only=True), start=2):
         record = {
-            key: normalize(row[header_index[label]]) for key, label in COLUMNS.items()
+            key: normalize(row[header_index[label]]) if header_index[label] < len(row) else ""
+            for key, label in COLUMNS.items()
         }
         if supervisor_index is not None and supervisor_index < len(row):
             record["supervisor"] = normalize(row[supervisor_index])
         else:
             record["supervisor"] = ""
+        record["sheet"] = worksheet.title
         record["excel_row"] = str(excel_row)
         if record["name"]:
             rows.append(record)
 
-    row_media = build_row_media_map(xlsx_path)
-    return headers, rows, row_media
+    return rows
+
+
+def read_rows(xlsx_path: Path) -> tuple[list[dict[str, str]], dict[tuple[str, int], tuple[bytes, str]]]:
+    workbook = openpyxl.load_workbook(xlsx_path)
+    sheet_images = build_sheet_row_images(workbook)
+
+    combined: dict[str, dict[str, str]] = {}
+    sheet_counts: dict[str, int] = {}
+
+    for worksheet in workbook.worksheets:
+        sheet_rows = parse_sheet_rows(worksheet)
+        sheet_counts[worksheet.title] = len(sheet_rows)
+        for record in sheet_rows:
+            combined[normalize_person_key(record["name"])] = record
+
+    rows = list(combined.values())
+    rows.sort(key=lambda record: (record["sheet"].casefold(), int(record["excel_row"])))
+    return rows, sheet_images, sheet_counts
+
+
+def build_sheet_row_images(workbook: openpyxl.Workbook) -> dict[tuple[str, int], tuple[bytes, str]]:
+    mapping: dict[tuple[str, int], tuple[bytes, str]] = {}
+
+    for worksheet in workbook.worksheets:
+        for image in getattr(worksheet, "_images", []):
+            marker = image.anchor._from
+            excel_row = marker.row + 1
+            extension = media_extension(str(image.path or ""))
+            mapping[(worksheet.title, excel_row)] = (image._data(), extension)
+
+    return mapping
 
 
 def media_extension(path: str) -> str:
@@ -203,73 +246,90 @@ def media_extension(path: str) -> str:
     return suffix if suffix in {".jpg", ".jpeg", ".png", ".svg", ".webp", ".gif"} else ".jpg"
 
 
-def build_row_media_map(xlsx_path: Path) -> dict[int, str]:
-    with zipfile.ZipFile(xlsx_path) as archive:
-        drawing = archive.read("xl/drawings/drawing1.xml").decode("utf-8")
-        rels = archive.read("xl/drawings/_rels/drawing1.xml.rels").decode("utf-8")
-
-        rel_map = {
-            match.group(1): match.group(2)
-            for match in re.finditer(r'Id="([^"]+)".*?Target="([^"]+)"', rels)
-        }
-
-        row_media: dict[int, str] = {}
-        anchors = re.findall(
-            r"<xdr:from>.*?<xdr:row>(\d+)</xdr:row>.*?r:embed=\"([^\"]+)\"",
-            drawing,
-            flags=re.S,
-        )
-        for row_index, rel_id in anchors:
-            target = rel_map.get(rel_id, "")
-            if target:
-                excel_row = int(row_index) + 1
-                row_media[excel_row] = f"xl/{target.removeprefix('../')}"
-
-        return row_media
+def extension_from_content_type(content_type: str) -> str:
+    lowered = content_type.lower()
+    if "jpeg" in lowered or "jpg" in lowered:
+        return ".jpg"
+    if "png" in lowered:
+        return ".png"
+    if "webp" in lowered:
+        return ".webp"
+    if "gif" in lowered:
+        return ".gif"
+    if "svg" in lowered:
+        return ".svg"
+    return ""
 
 
-def extract_image_bytes(xlsx_path: Path, media_path: str) -> bytes:
-    with zipfile.ZipFile(xlsx_path) as archive:
-        if media_path in archive.namelist():
-            return archive.read(media_path)
-        basename = Path(media_path).name
-        for member in archive.namelist():
-            if member.endswith("/" + basename):
-                return archive.read(member)
-        raise FileNotFoundError(f"Could not find image media '{media_path}' in {xlsx_path}")
+def normalize_download_url(url: str) -> str:
+    match = re.search(r"drive\.google\.com/file/d/([a-zA-Z0-9_-]+)", url)
+    if match:
+        return f"https://drive.google.com/uc?export=download&id={match.group(1)}"
+    return url
+
+
+def download_image(url: str) -> tuple[bytes, str]:
+    request = urllib.request.Request(
+        normalize_download_url(url),
+        headers={"User-Agent": "Mozilla/5.0 (compatible; HEAL-Lab-Website-Sync/1.0)"},
+    )
+    with urllib.request.urlopen(request, timeout=45) as response:
+        data = response.read()
+        content_type = normalize(response.headers.get("Content-Type", ""))
+
+    extension = extension_from_content_type(content_type) or media_extension(url)
+    if not data:
+        raise ValueError("Downloaded image was empty")
+    if "text/html" in content_type and not extension:
+        raise ValueError("Download returned HTML instead of an image (check sharing permissions)")
+    return data, extension or ".jpg"
+
+
+def write_team_photo(slug: str, data: bytes, extension: str, dry_run: bool) -> str:
+    destination = TEAM_IMAGES_DIR / f"{slug}{extension}"
+    web_path = f"/assets/images/team/{destination.name}"
+    if dry_run:
+        return web_path
+    TEAM_IMAGES_DIR.mkdir(parents=True, exist_ok=True)
+    destination.write_bytes(data)
+    return web_path
 
 
 def resolve_photo_path(
     record: dict[str, str],
-    row_media: dict[int, str],
+    sheet_images: dict[tuple[str, int], tuple[bytes, str]],
     xlsx_path: Path,
     dry_run: bool,
+    warnings: list[str],
 ) -> str:
-    excel_row = int(record["excel_row"])
     slug = slugify(record["name"])
-    media_path = row_media.get(excel_row)
+    sheet_key = (record["sheet"], int(record["excel_row"]))
 
-    if media_path is not None:
-        extension = media_extension(media_path)
-        destination = TEAM_IMAGES_DIR / f"{slug}{extension}"
-        web_path = f"/assets/images/team/{destination.name}"
-        if dry_run:
-            return web_path
-        TEAM_IMAGES_DIR.mkdir(parents=True, exist_ok=True)
-        destination.write_bytes(extract_image_bytes(xlsx_path, media_path))
-        return web_path
+    embedded = sheet_images.get(sheet_key)
+    if embedded is not None:
+        data, extension = embedded
+        return write_team_photo(slug, data, extension, dry_run)
 
     image_hint = record["image_hint"]
+    if image_hint.startswith(("http://", "https://")):
+        if dry_run:
+            extension = media_extension(image_hint)
+            return f"/assets/images/team/{slug}{extension or '.jpg'}"
+        try:
+            data, extension = download_image(image_hint)
+            return write_team_photo(slug, data, extension, dry_run)
+        except (urllib.error.URLError, ValueError, TimeoutError) as exc:
+            warnings.append(f"{record['name']}: could not download profile image ({exc})")
+            return PLACEHOLDER_PHOTO
+
     if image_hint:
         hint_path = xlsx_path.parent / image_hint
         if hint_path.exists():
-            destination = TEAM_IMAGES_DIR / f"{slug}{hint_path.suffix.lower()}"
-            web_path = f"/assets/images/team/{destination.name}"
+            extension = hint_path.suffix.lower() or ".jpg"
             if dry_run:
-                return web_path
-            TEAM_IMAGES_DIR.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(hint_path, destination)
-            return web_path
+                return f"/assets/images/team/{slug}{extension}"
+            return write_team_photo(slug, hint_path.read_bytes(), extension, dry_run)
+        warnings.append(f"{record['name']}: profile image file not found ({image_hint})")
 
     return PLACEHOLDER_PHOTO
 
@@ -343,14 +403,15 @@ def main() -> int:
         print(f"Spreadsheet not found: {args.xlsx}", file=sys.stderr)
         return 1
 
-    _, rows, row_media = read_rows(args.xlsx)
+    rows, sheet_images, sheet_counts = read_rows(args.xlsx)
 
     co_directors: list[dict] = []
     team_groups = empty_team_groups()
     uncategorized: list[str] = []
+    photo_warnings: list[str] = []
 
     for record in rows:
-        photo = resolve_photo_path(record, row_media, args.xlsx, args.dry_run)
+        photo = resolve_photo_path(record, sheet_images, args.xlsx, args.dry_run, photo_warnings)
         role_in_lab = record["role_in_lab"]
 
         if is_co_director(role_in_lab):
@@ -367,7 +428,9 @@ def main() -> int:
     lab_data = merge_lab_data(load_yaml(args.lab_yml), sort_by_first_name(co_directors))
     team_data = merge_team_data(load_yaml(args.team_yml), team_groups)
 
-    print(f"Parsed {len(rows)} people from {args.xlsx.name}")
+    sheet_summary = ", ".join(f"{name} ({count})" for name, count in sheet_counts.items())
+    print(f"Parsed {len(rows)} unique people from {args.xlsx.name}")
+    print(f"Sheets: {sheet_summary}")
     print(f"Co-directors ({len(co_directors)}): {', '.join(d['name'] for d in co_directors) or 'none'}")
     for group in TEAM_GROUPS:
         members = team_groups[group]
@@ -375,6 +438,10 @@ def main() -> int:
         print(f"{label.title()} ({len(members)}): {', '.join(m['name'] for m in members) or 'none'}")
     if uncategorized:
         print("Uncategorized (skipped): " + "; ".join(uncategorized), file=sys.stderr)
+    if photo_warnings:
+        print(f"Photo warnings ({len(photo_warnings)}):", file=sys.stderr)
+        for warning in photo_warnings:
+            print(f"  - {warning}", file=sys.stderr)
 
     if args.dry_run:
         print("Dry run complete; no files written.")

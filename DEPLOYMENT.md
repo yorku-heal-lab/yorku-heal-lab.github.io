@@ -196,7 +196,7 @@ python3 scripts/sync_news_from_xlsx.py
 
 #### Team and co-directors
 
-**Spreadsheet:** `scripts/data/HEAL lab info for website.xlsx`
+**Spreadsheet:** `scripts/data/HEAL lab info for website.xlsx` (all worksheets are read; duplicate names keep the last sheet’s row)
 
 **Script:**
 
@@ -216,7 +216,7 @@ python3 scripts/sync_from_xlsx.py
 | publication list (at Lab) | Google Scholar or personal website URL |
 | York contact info (email) | Email address |
 | research interests (keywords) | Comma-separated keywords |
-| link to profile image to use | Image filename or path; copied to `assets/images/team/` |
+| link to profile image to use | Embedded photo in the sheet, local filename in `scripts/data/`, or **http(s) URL** (Google Drive share links are supported) |
 
 **Notes:**
 
