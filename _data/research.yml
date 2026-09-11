@@ -14,5 +14,21 @@ sections:
 - title: Current Projects
   format: list
   items:
-  - title: Health Systems Simulation
-    description: Agent-based models for policy evaluation and resource allocation.
+  - title: CCSA Dashboard
+    description: |-
+      The CCSA Social Reporting Tool is a national platform built by the Canadian Centre on Substance Use and Addiction in collaboration with York University's HEAL Lab. It tracks hundreds of trusted social media accounts across every province and territory, uses AI to classify events, and maps what it finds to show emerging trends in drug supply, public safety, and public health. Results appear on an interactive map and dashboard, in English and French. Leaders in health, policy, and community safety can use it to get a single, current view of emerging risks.
+    researcher: Kamila Kolpashnikova
+  - title: Health Risks of Homelessness
+    description: |-
+      Dr Fu’s current research examines neurological and mental health risks among people experiencing homelessness. Using administrative and community-level data, including the Homeless Individuals and Families Information System (HIFIS) and Point-in-Time Count data, his work investigates patterns of mental health needs, health disparities, and associated social and health-related risk factors. This research aims to generate evidence that can support more informed service planning, public health interventions, and policy responses for people experiencing homelessness and other underserved populations.
+    researcher: Frederic Fu
+  - title: Human-AI Interaction
+    description: |-
+      I am currently researching AI-supported clinical decision-making in mental health, focusing on how clinicians calibrate trust in AI recommendations and when they accept, modify, or override AI advice. This work also considers how individual decisions may translate into broader health-system outcomes, including equity, resource utilization, and patient flow. In parallel, I am contributing to research involving Thunder Bay HIFIS (Homeless Individuals and Families Information System) and the analysis of online Reddit data to better understand homelessness, associated stigma, service coordination, and system-level decision-making.
+    researcher: Debanjan Borthakur
+  - title: Multilingual Conversational Health AI
+    description: >-
+      Multilingual Conversational Health AI for Older Adults Using Small Language Models:
+
+      I am developing multilingual conversational health AI for older adults, using small language models (SLMs) that run locally on consumer devices rather than relying on cloud APIs. The work focuses on heritage and minority language speakers in the Greater Toronto Area, with an initial language set of Cantonese, Mandarin, Punjabi, Spanish, Tagalog, Hindi, Tamil, and Farsi. The project spans a systematic review of the current landscape, a benchmark evaluation of SLMs across these eight languages, a working prototype, and a co-designed evaluation framework developed with older adults and community partners. Because on-device inference keeps health conversations private by design, the approach also addresses the accountability and data-governance concerns that limit adoption of commercial assistants in Ontario care settings.
+    researcher: Arunim Garg

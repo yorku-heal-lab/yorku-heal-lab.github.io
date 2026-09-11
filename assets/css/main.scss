@@ -540,6 +540,34 @@ a {
   }
 }
 
+.research-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.research-project {
+  @include card-surface;
+  padding: 1.15rem 1.25rem;
+  margin: 0;
+}
+
+.research-project__researcher {
+  margin: 0 0 0.45rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: $color-york-red;
+}
+
+.research-project__body {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: $color-text;
+}
+
 .page-note {
   margin-top: 2rem;
   padding: 1rem 1.25rem;

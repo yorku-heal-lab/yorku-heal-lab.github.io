@@ -290,7 +290,7 @@ Sections keep spreadsheet order; items within each section are sorted alphabetic
 python3 scripts/sync_research_from_xlsx.py
 ```
 
-**Columns:** `section`, `format`, `title`, `description`, `url` (optional)
+**Columns:** `section`, `format`, `title`, `description`, `url` (optional), `name` (optional — primary researcher; shown on project list items)
 
 | format | Renders as |
 |--------|------------|

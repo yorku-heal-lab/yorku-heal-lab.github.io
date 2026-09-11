@@ -21,6 +21,7 @@ COLUMNS = {
     "title": "title",
     "description": "description",
     "url": "url",
+    "researcher": "name",
 }
 
 VALID_FORMATS = {"theme", "list"}
@@ -128,6 +129,9 @@ def read_research_rows(xlsx_path: Path) -> tuple[list[dict], list[str]]:
             item["description"] = description
         if url:
             item["url"] = url
+        researcher = normalize(record["researcher"])
+        if researcher:
+            item["researcher"] = researcher
 
         items.append(item)
 
@@ -151,6 +155,8 @@ def build_sections(items: list[dict]) -> list[dict]:
             entry["description"] = item["description"]
         if item.get("url"):
             entry["url"] = item["url"]
+        if item.get("researcher"):
+            entry["researcher"] = item["researcher"]
         grouped[section_title]["items"].append(entry)
 
     sections = []

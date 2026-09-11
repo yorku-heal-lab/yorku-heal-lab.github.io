@@ -10,13 +10,18 @@ subtitle: Our research program focuses on health informatics, analytics, and AI 
 {% if section.format == 'list' %}
 <ul class="research-list">
   {% for item in section.items %}
-  <li>
-    {% if item.url %}
-      <strong><a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a></strong>
-    {% else %}
-      <strong>{{ item.title }}</strong>
+  <li class="research-project">
+    {% if item.researcher %}
+      <p class="research-project__researcher">Primary Researcher: {{ item.researcher }}</p>
     {% endif %}
-    {% if item.description %} — {{ item.description }}{% endif %}
+    <p class="research-project__body">
+      {% if item.url %}
+        <strong><a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.title }}</a></strong>
+      {% else %}
+        <strong>{{ item.title }}</strong>
+      {% endif %}
+      {% if item.description %} — {{ item.description }}{% endif %}
+    </p>
   </li>
   {% endfor %}
 </ul>
