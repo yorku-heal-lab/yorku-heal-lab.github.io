@@ -430,10 +430,15 @@ def merge_lab_data(existing: dict, directors: list[dict]) -> dict:
     lab_data["directors"] = directors
 
     if directors:
-        first_email = directors[0].get("email")
         contact = dict(lab_data.get("contact") or {})
-        if first_email:
-            contact["email"] = first_email
+        people = [
+            {"name": director["name"], "email": director["email"]}
+            for director in directors
+            if director.get("email")
+        ]
+        if people:
+            contact["people"] = people
+            contact["email"] = people[0]["email"]
         lab_data["contact"] = contact
 
     return lab_data

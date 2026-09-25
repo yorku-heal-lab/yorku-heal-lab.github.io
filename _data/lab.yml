@@ -49,6 +49,13 @@ contact:
   office: 340 Stong College, Keele Campus
   address: 4700 Keele Street, Toronto, ON M3J 1P3, Canada
   phone: +1 (416) 736-2100
+  people:
+  - name: Dr. Elham Dolatabadi
+    email: edolatab@yorku.ca
+  - name: Dr. Christo El Morr
+    email: elmorr@yorku.ca
+  - name: Dr. Vijay Mago
+    email: vmago@yorku.ca
 bio:
 - >
   The Health Equity and AI Lab (HEAL) envisions a Canada where Artificial Intelligence (AI) serves as a powerful tool for social justice, actively reducing disparities and promoting inclusion for all citizens while adhering to principles of fairness. HEAL's research is structured around two main pillars: leveraging AI to promote equity and reduce health disparities, and integrating fairness principles into AI models to align with diverse health applications. The program involves collecting and aggregating various types of health data from across Canada, including clinical, biological, social, environmental, and administrative data from hospitals, government surveys, public health platforms, and wearable devices. A groundbreaking initiative of HEAL is the development and implementation of advanced machine learning and foundation models to analyze multimodal health data, alongside innovative approaches to embed fairness into predictive health models. In the short term, HEAL will create technology

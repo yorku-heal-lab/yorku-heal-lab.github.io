@@ -220,7 +220,7 @@ python3 scripts/sync_from_xlsx.py
 
 **Notes:**
 
-- Rows with **Co-Director** or **Director** in “role in the lab” populate `_data/lab.yml` and the **Leadership** section on the Team page (not listed under other team groups). **Director** appears before **Co-Director**; within each role, names are sorted by first name.
+- Rows with **Co-Director** or **Director** in “role in the lab” populate `_data/lab.yml` and the **Leadership** section on the Team page (not listed under other team groups). **Director** appears before **Co-Director**; within each role, names are sorted by first name. Their names and emails sync into `contact.people` for the home page **Lab Contact** sidebar (office/address/phone in `contact` are left unchanged).
 - Other members are grouped into postdocs, PhD students, master's students, undergraduate students, collaborators, or researchers (e.g. visiting scholar, ML researcher) based on role keywords, sorted alphabetically by first name. Supervisor names are shown on team cards; member emails are not published on the site.
 - Profile images embedded in the spreadsheet are extracted automatically; otherwise a placeholder is used.
 

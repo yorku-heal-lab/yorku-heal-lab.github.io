@@ -370,6 +370,10 @@ a {
   dd {
     margin: 0.2rem 0 0;
   }
+
+  dd.lab-contact-person + dd.lab-contact-person {
+    margin-top: 0.45rem;
+  }
 }
 
 .contact-sidebar {
