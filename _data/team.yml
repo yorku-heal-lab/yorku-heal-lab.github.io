@@ -1,4 +1,14 @@
 leadership:
+- name: Dr. Elham Dolatabadi
+  role: Director
+  title: Assistant Professor
+  department: School of Health Policy and Management
+  faculty: Faculty of Health, York University
+  photo: /assets/images/team/elham-dolatabadi.png
+  bio: |-
+    Dr Dolatabadi is an Assistant Professor at the Faculty of Health and is also cross-appointed to the Lassonde School of Engineering (EECS) at York University. She is a faculty affiliate at Vector Institute. She holds the York Research Chair in Safe AI. She is also the lead of the research committee at Connected Minds. Prior to joining York University, she was an Applied Machine Learning Scientist, Health Lead at Vector Institute. Her innovations in machine learning and health have always been inspired by complex health problems and have positively impacted Ontario's healthcare system. Over the past 14 years, her work portfolio and research agenda have been dedicated to the adoption of ML and Deep Learning technologies into real-world needs in order to accelerate the pace of scientific discovery, improve evidence-based decision-making, and increase healthcare operational efficiency.
+  email: edolatab@yorku.ca
+  website: https://scholar.google.com/citations?user=A2AROnAAAAAJ&hl=en
 - name: Dr. Christo El Morr
   role: Co-Director
   title: Associate Professor and Chair, Professor
@@ -32,17 +42,43 @@ leadership:
   email: vmago@yorku.ca
   website: https://scholar.google.ca/citations?user=lotIW94AAAAJ&hl=en&oi=ao
 collaborators:
+- name: Alvine Boaye Belle
+  role: Collaborator
+  photo: /assets/images/team/alvine-boaye-belle.jpg
+  affiliation: Associate Professor
+  bio: >-
+    Alvine B. Belle is an Associate Professor at the Department of Electrical Engineering and Computer Science at York University, Toronto, Canada. Her research focuses on generative AI, safety assurance, health informatics, and EDI (Equity-Diversity and Inclusion) in computing. She holds a Ph.D. in software engineering from the University of Quebec (Ecole de Technologie Supérieure), Montreal, Canada. She worked for two years as a postdoctoral researcher at the University of Ottawa, Ottawa, Canada. She has recently completed a graduate diploma in public administration and governance at McGill University, Montreal, Canada. She has authored several papers in top-tier venues such as Information and Software Technology, Journal of Systems and Software, ACM Computing Surveys, ICSA (formerly ECSA), and ACM Transactions on Computing Education.
+
+    Dr. Belle currently serves on several international committees. She was a student volunteer co-chair at ICSE 2022. She was part of the APSEC 2023 organization committee. She was part of the ICSE 2024 organizing committee where she served as a diversity co-chair. She was also part of the EASE 2026 research program committee.
 - name: Andrew Fisher
   role: Collaborator
   photo: /assets/images/team/andrew-fisher.jpeg
   affiliation: Assistant Professor
   bio: |-
     Andrew Fisher obtained an Honours BSc from Brandon University in 2019 and began his MSc with a specialization in artificial intelligence at Lakehead University. His studies were supported by a SSHRC Grant and a Mitacs Globalink Research Award. In January 2021, he began a PhD at Saint Mary’s University, supported by a Mitacs Accelerate award and an industry partner in the construction sector, where he developed machine learning solutions to automate production workflows. His thesis was recognized with the J. Kevin Vessey Award for the Ph.D. in Applied Science. Andrew was then a Postdoctoral Visitor at York University, funded by the Connected Minds CFREF, where he focused on using large language models to improve the accessibility of health information. Currently, he is an Assistant Professor in the Faculty of Computer Science at the University of New Brunswick.
+- name: Muskan Garg
+  role: Collaborator
+  photo: /assets/images/team/muskan-garg.jpeg
+  affiliation: Assistant Professor
+  bio: |-
+    Muskan Garg is working as research associate with an academic rank of Assistant Professor in the Department of Artificial Intelligence and Informatics at Mayo Clinic, Rochester, MN. Her research lies at the intersection of clinical natural language processing, healthcare informatics, and network science, with a focus on extracting psychosocial and quality-of-life constructs. Her work emphasizes translational impact particularly in aging, depression, cognitive impairment, and whole-person wellness modeling. She is actively engaged in interdisciplinary collaborations aimed at building explainable models. She is deeply interested in developing interpretable and resource-efficient NLP pipelines that are portable across healthcare systems and suitable for clinical deployment, addressing challenges of data sparsity, privacy, and model transparency.
 - name: Nikita Neveditsin
   role: Collaborator
   photo: /assets/images/team/placeholder.svg
   affiliation: Assistant Professor
 postdocs:
+- name: Dr. Abeer Badawi
+  role: Postdoctoral Fellow
+  photo: /assets/images/team/abeer-badawi.png
+  supervisor: Elham Dolatabadi
+  bio: |-
+    Abeer Badawi is a Postdoctoral Researcher with over 10 years of experience in AI, LLMs, Computer Engineering, and real-world healthcare applications. Her research focuses on Responsible AI; Safety and Alignment; Human-Centred AI; LLM Behaviour and Evaluation; Cognitive and Mental Health; and AI for Health.
+- name: Dr. Arash Rasti Meymandi
+  role: Postdoctoral Fellow
+  photo: /assets/images/team/arash-rasti-meymandi.png
+  supervisor: Elham Dolatabadi & Angela Cheung
+  bio: |-
+    Arash Rasti is a postdoctoral fellow working on world models for biological and biomedical systems. His research focuses on applying advanced computational models to complex biological and biomedical problems.
 - name: Dr. Dawit Mekonen
   role: Postdoctoral Researcher
   photo: /assets/images/team/placeholder.svg
@@ -74,12 +110,40 @@ phd_students:
   supervisor: Vijay Mago
   bio: |-
     John investigates algorithmic fairness, bias, and equity in clinical Large Language Models and AI-enabled decision-support systems. His research integrates advanced statistical methods, including Bayesian networks and mediation analysis, with intersectional patient data to evaluate demographic disparities in AI-assisted chest pain assessment and diagnosis. His work focuses on identifying, quantifying, and mitigating systematic bias in medical AI, with the broader goal of ensuring that clinical artificial intelligence is statistically rigorous, clinically reliable, and equitable across diverse patient populations.
+- name: Manmeet Kaur Baxi
+  role: PhD Studebt
+  photo: /assets/images/team/placeholder.svg
+  supervisor: Vijay Mago
 - name: Mila Kolpashnikova
   role: PhD student
   photo: /assets/images/team/placeholder.svg
   supervisor: Vijay Mago
   bio: |-
     Senior AI Developer at a Toronto-based startup, specializing in the design and evaluation of agentic workflows and Retrieval-Augmented Generation (RAG) systems. Current research explores AI system architectures and platform sovereignty.
+- name: Most Husne Jahan
+  role: PhD Student
+  photo: /assets/images/team/most-husne-jahan.png
+  supervisor: Elham Dolatabadi
+  bio: |-
+    Most Husne Jahan is a PhD student working on multimodal deep learning, image and video understanding, and reasoning in vision-language models. Her research focuses on medical image and video understanding, multimodal large language models (MLLMs), and spatially grounded and spatiotemporal reasoning. Her broader research interests include image and video super-resolution, 3D point cloud processing, adversarial machine learning and robust training, model optimization, and efficient deep learning.
+- name: Negin Baghbanzadeh
+  role: PhD Student
+  photo: /assets/images/team/negin-baghbanzadeh.png
+  supervisor: Elham Dolatabadi
+  bio: |-
+    Negin Baghbanzadeh is a PhD student working on multimodal deep learning and reasoning in medical vision-language models, as well as model drift and adaptive evaluation. Her research includes medical representation learning, multimodal datasets, preference optimization, and robust clinical AI evaluation.
+- name: Pedram Noghani Ardestani
+  role: PhD Student
+  photo: /assets/images/team/pedram-noghani-ardestani.png
+  supervisor: Elham Dolatabadi
+  bio: |-
+    Pedram is a Ph.D. student in Health System Management and Health Data Analytics at York University. He holds a B.Sc. in Biomedical Engineering, an M.Sc. in Economics, and an M.Sc. in Systems Science - Health Systems. With over 10 years of experience working as a Methodologist and Health Data Analyst in the Canadian healthcare system, he has gained extensive knowledge in healthcare data analysis. He is particularly interested in exploring the potential of ML and AI and their implications for improving healthcare systems and patient outcomes. His research topic is identifying high-risk patients for the Geriatric Emergency Management (GEM) program using ML.
+- name: Sevda Ebrahimi
+  role: PhD Student
+  photo: /assets/images/team/sevda-ebrahimi.png
+  supervisor: Elham Dolatabadi
+  bio: |-
+    Sevda Ebrahimi is a PhD student studying model drift, capability, and adaptive evaluation in clinical AI. Her work focuses on detecting harmful data shifts and improving reliable evaluation of biomedical AI and LLM systems.
 - name: Siyuan (Sabrina) Gao
   role: PhD student
   photo: /assets/images/team/siyuan-sabrina-gao.jpg
@@ -101,6 +165,12 @@ phd_students:
   bio: |-
     Yash Amethiya is pursuing PhD in Health (specialized in Health System Management and Health Data Analytics) at York University. His research, funded by Connected Minds CFREF, focuses on introducing design disciplines to Electronic Health Records (EHRs) and Healthcare. By moving beyond traditional widget based EHRs, his work aims to reduce clinician burnout, optimize cognitive load, and encourage dynamic learning health systems.Further, his research emphasizes the application of neurosymbolic artificial intelligence in healthcare, combining transparent symbolic logic and human in the loop guardrails rather than relying on standard black box AI models. He is also a Software Developer at Aurora Constellations, where he leads the development of the prototype for the same research.
 masters_students:
+- name: Jenna Cappello
+  role: MA Student
+  photo: /assets/images/team/jenna-cappello.png
+  supervisor: Elham Dolatabadi
+  bio: |-
+    Jenna is a fifth-year undergraduate student at York University completing a Bachelor of Health Studies degree with a Specialized Honours major in Health Informatics. Her academic interests lie at the intersection of artificial intelligence and health equity, with a particular passion for exploring how digital health innovations may be designed to promote inclusivity, accessibility, and trust in healthcare systems.
 - name: Rawan Dabboussi
   role: MA Student
   photo: /assets/images/team/rawan-dabboussi.jpg
@@ -110,10 +180,31 @@ masters_students:
 
 
     Her emerging research interests explore the intersection of artificial intelligence, disability, and health and social care, particularly how AI-enabled technologies may shape accessibility, autonomy, equity, and the experiences of people with disabilities.
-visiting_scholars:
+- name: Shayan Emzad
+  role: MSc Student
+  photo: /assets/images/team/shayan-emzad.png
+  supervisor: Elham Dolatabadi
+  bio: |-
+    Shayan Emzad is an MSc student involved in research on safe, human-aligned mental health AI and multimodal reasoning in medical vision-language models. His work bridges trustworthy conversational AI and multimodal medical AI.
+undergraduate_students:
+- name: Devanshi
+  role: Undergraduate student
+  photo: /assets/images/team/placeholder.svg
+  supervisor: Vijay Mago
+- name: Praise
+  role: Undergraduate student
+  photo: /assets/images/team/placeholder.svg
+  supervisor: Vijay Mago
+researchers:
 - name: Marco A. Serrano
   role: Visiting Scholar
   photo: /assets/images/team/marco-a-serrano.png
   supervisor: Vijay Mago
   bio: |-
     Marco Antonio Serrano Saavedra is a PhD candidate in Advanced Information Technologies at the University of Castilla-La Mancha (UCLM), with over 15 years of professional experience in data, analytics, cloud technologies, and artificial intelligence. His current research focuses on clinical AI and the development of multimodal predictive models for clinically significant prostate cancer, integrating structured clinical data, natural language processing, and medical imaging. His research interests include clinical machine learning, multimodal learning, quantitative imaging biomarkers, model validation and calibration, and translational AI for clinical decision support. He is also CTO at Medithink, where he leads the development of AI solutions for healthcare.
+- name: Sepideh Nahali
+  role: ML Researcher
+  photo: /assets/images/team/sepideh-nahali.png
+  supervisor: Elham Dolatabadi
+  bio: |-
+    Sepideh Nahali is a machine learning researcher working on world models for biological and biomedical systems. Her research focuses on applying machine learning to model complex biological and biomedical data.

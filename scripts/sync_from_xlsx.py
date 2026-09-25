@@ -22,7 +22,14 @@ DEFAULT_TEAM_YML = ROOT / "_data" / "team.yml"
 TEAM_IMAGES_DIR = ROOT / "assets" / "images" / "team"
 PLACEHOLDER_PHOTO = "/assets/images/team/placeholder.svg"
 
-TEAM_GROUPS = ("collaborators", "postdocs", "phd_students", "masters_students", "visiting_scholars")
+TEAM_GROUPS = (
+    "collaborators",
+    "postdocs",
+    "phd_students",
+    "masters_students",
+    "undergraduate_students",
+    "researchers",
+)
 
 COLUMNS = {
     "name": "name to display",
@@ -99,6 +106,16 @@ def sort_by_first_name(members: list[dict]) -> list[dict]:
     return sorted(members, key=lambda member: (first_name(member["name"]), member["name"].casefold()))
 
 
+def sort_leadership(members: list[dict]) -> list[dict]:
+    role_rank = {"Director": 0, "Co-Director": 1}
+
+    def key(member: dict) -> tuple[int, str, str]:
+        rank = role_rank.get(member.get("role", ""), 2)
+        return (rank, first_name(member["name"]), member["name"].casefold())
+
+    return sorted(members, key=key)
+
+
 def is_co_director(role_in_lab: str) -> bool:
     return "co-director" in role_in_lab.lower()
 
@@ -128,8 +145,6 @@ def classify_team_group(role_in_lab: str) -> str | None:
         return None
     if "collaborator" in lowered:
         return "collaborators"
-    if "visiting scholar" in lowered:
-        return "visiting_scholars"
     if "postdoc" in lowered or "postdoctoral" in lowered:
         return "postdocs"
     if re.search(r"\bph\.?\s*d\.?\b", lowered) or "phd" in lowered or "doctoral" in lowered:
@@ -141,6 +156,16 @@ def classify_team_group(role_in_lab: str) -> str | None:
         or "msc" in lowered
     ):
         return "masters_students"
+    if "undergraduate" in lowered:
+        return "undergraduate_students"
+    if (
+        "visiting scholar" in lowered
+        or "researcher" in lowered
+        or "research scientist" in lowered
+        or "research fellow" in lowered
+        or "research associate" in lowered
+    ):
+        return "researchers"
 
     return None
 
@@ -161,6 +186,9 @@ def parse_director_title(role_in_lab: str) -> str:
     if not parts:
         return role_in_lab
     if is_co_director(parts[0]):
+        remaining = parts[1:]
+        return ", ".join(remaining) if remaining else parts[0]
+    if parts[0].lower().strip() == "director":
         remaining = parts[1:]
         return ", ".join(remaining) if remaining else parts[0]
     return role_in_lab
@@ -186,10 +214,19 @@ def parse_interests(text: str) -> list[str]:
     return [chunk.strip() for chunk in chunks if chunk.strip()]
 
 
-def resolve_column_index(header_index: dict[str, int], labels: tuple[str, ...]) -> int | None:
+def header_column_index(headers: list[str], label: str) -> int | None:
+    target = label.casefold()
+    for idx, header in enumerate(headers):
+        if header.casefold() == target:
+            return idx
+    return None
+
+
+def resolve_column_index(headers: list[str], labels: tuple[str, ...]) -> int | None:
     for label in labels:
-        if label in header_index:
-            return header_index[label]
+        idx = header_column_index(headers, label)
+        if idx is not None:
+            return idx
     return None
 
 
@@ -200,22 +237,21 @@ def normalize_person_key(name: str) -> str:
 
 def parse_sheet_rows(worksheet: Any) -> list[dict[str, str]]:
     headers = [normalize(cell.value) for cell in next(worksheet.iter_rows(min_row=1, max_row=1))]
-    header_index = {header: idx for idx, header in enumerate(headers)}
 
-    missing = [label for label in COLUMNS.values() if label not in header_index]
+    missing = [label for label in COLUMNS.values() if header_column_index(headers, label) is None]
     if missing:
         raise ValueError(
             f"Sheet '{worksheet.title}' is missing expected columns: {', '.join(missing)}"
         )
 
-    supervisor_index = resolve_column_index(header_index, SUPERVISOR_HEADERS)
+    supervisor_index = resolve_column_index(headers, SUPERVISOR_HEADERS)
     rows: list[dict[str, str]] = []
 
     for excel_row, row in enumerate(worksheet.iter_rows(min_row=2, values_only=True), start=2):
-        record = {
-            key: normalize(row[header_index[label]]) if header_index[label] < len(row) else ""
-            for key, label in COLUMNS.items()
-        }
+        record = {}
+        for key, label in COLUMNS.items():
+            col = header_column_index(headers, label)
+            record[key] = normalize(row[col]) if col is not None and col < len(row) else ""
         if supervisor_index is not None and supervisor_index < len(row):
             record["supervisor"] = normalize(row[supervisor_index])
         else:
@@ -407,7 +443,7 @@ def merge_team_data(
     grouped_members: dict[str, list[dict]],
     leadership: list[dict],
 ) -> dict:
-    team_data = {"leadership": sort_by_first_name(leadership)}
+    team_data = {"leadership": sort_leadership(leadership)}
     team_data.update(
         {group: sort_by_first_name(grouped_members.get(group, [])) for group in TEAM_GROUPS}
     )
@@ -454,8 +490,9 @@ def main() -> int:
             )
         )
 
-    lab_data = merge_lab_data(load_yaml(args.lab_yml), sort_by_first_name(co_directors))
-    team_data = merge_team_data(team_groups, sort_by_first_name(co_directors))
+    leadership = sort_leadership(co_directors)
+    lab_data = merge_lab_data(load_yaml(args.lab_yml), leadership)
+    team_data = merge_team_data(team_groups, leadership)
 
     sheet_summary = ", ".join(f"{name} ({count})" for name, count in sheet_counts.items())
     print(f"Parsed {len(rows)} unique people from {args.xlsx.name}")

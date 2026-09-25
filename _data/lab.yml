@@ -2,6 +2,16 @@ name: HEAL Lab
 tagline: Health Equity and AI Lab
 full_name: Health Equity and AI Lab
 directors:
+- name: Dr. Elham Dolatabadi
+  role: Director
+  title: Assistant Professor
+  department: School of Health Policy and Management
+  faculty: Faculty of Health, York University
+  photo: /assets/images/team/elham-dolatabadi.png
+  bio: |-
+    Dr Dolatabadi is an Assistant Professor at the Faculty of Health and is also cross-appointed to the Lassonde School of Engineering (EECS) at York University. She is a faculty affiliate at Vector Institute. She holds the York Research Chair in Safe AI. She is also the lead of the research committee at Connected Minds. Prior to joining York University, she was an Applied Machine Learning Scientist, Health Lead at Vector Institute. Her innovations in machine learning and health have always been inspired by complex health problems and have positively impacted Ontario's healthcare system. Over the past 14 years, her work portfolio and research agenda have been dedicated to the adoption of ML and Deep Learning technologies into real-world needs in order to accelerate the pace of scientific discovery, improve evidence-based decision-making, and increase healthcare operational efficiency.
+  email: edolatab@yorku.ca
+  website: https://scholar.google.com/citations?user=A2AROnAAAAAJ&hl=en
 - name: Dr. Christo El Morr
   role: Co-Director
   title: Associate Professor and Chair, Professor
@@ -35,13 +45,14 @@ directors:
   email: vmago@yorku.ca
   website: https://scholar.google.ca/citations?user=lotIW94AAAAJ&hl=en&oi=ao
 contact:
-  email: elmorr@yorku.ca
+  email: edolatab@yorku.ca
   office: 340 Stong College, Keele Campus
   address: 4700 Keele Street, Toronto, ON M3J 1P3, Canada
   phone: +1 (416) 736-2100
 bio:
 - >
-  The Health Equity and AI Lab (HEAL) envisions a Canada where Artificial Intelligence (AI) serves as a powerful tool for social justice, actively reducing disparities and promoting inclusion for all citizens while adhering to principles of fairness. HEAL's research is structured around two main pillars: leveraging AI to promote equity and reduce health disparities, and integrating fairness principles into AI models to align with diverse health applications. The program involves collecting and aggregating various types of health data from across Canada, including clinical, biological, social, environmental, and administrative data from hospitals, government surveys, public health platforms, and wearable devices. A groundbreaking initiative of HEAL is the development and implementation of advanced machine learning and foundation models to analyze multimodal health data, alongside innovative approaches to embed fairness into predictive health models. In the short term, HEAL will create technology and repositories for fair analysis of complex and multimodal health data to understand the relationship between disparity determinants and health outcomes in Canada. In the long term, HEAL will develop toolkits and knowledge frameworks to inform policy recommendations, improving healthcare access and outcomes, especially for RESE (racialized, ethnic and socio-econ) groups across Canada.
+  The Health Equity and AI Lab (HEAL) envisions a Canada where Artificial Intelligence (AI) serves as a powerful tool for social justice, actively reducing disparities and promoting inclusion for all citizens while adhering to principles of fairness. HEAL's research is structured around two main pillars: leveraging AI to promote equity and reduce health disparities, and integrating fairness principles into AI models to align with diverse health applications. The program involves collecting and aggregating various types of health data from across Canada, including clinical, biological, social, environmental, and administrative data from hospitals, government surveys, public health platforms, and wearable devices. A groundbreaking initiative of HEAL is the development and implementation of advanced machine learning and foundation models to analyze multimodal health data, alongside innovative approaches to embed fairness into predictive health models. In the short term, HEAL will create technology
+  and repositories for fair analysis of complex and multimodal health data to understand the relationship between disparity determinants and health outcomes in Canada. In the long term, HEAL will develop toolkits and knowledge frameworks to inform policy recommendations, improving healthcare access and outcomes, especially for RESE (racialized, ethnic and socio-econ) groups across Canada.
 research_interests:
 - Health Informatics
 - Natural Language Processing

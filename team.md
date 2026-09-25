@@ -47,11 +47,21 @@ subtitle: Meet the people behind HEAL Lab.
 </div>
 {% endif %}
 
-{% if site.data.team.visiting_scholars.size > 0 %}
-## Visiting Scholars
+{% if site.data.team.undergraduate_students.size > 0 %}
+## Undergraduate Students
 
 <div class="team-grid">
-{% for member in site.data.team.visiting_scholars %}
+{% for member in site.data.team.undergraduate_students %}
+  {% include team-member.html member=member %}
+{% endfor %}
+</div>
+{% endif %}
+
+{% if site.data.team.researchers.size > 0 %}
+## Researchers
+
+<div class="team-grid">
+{% for member in site.data.team.researchers %}
   {% include team-member.html member=member %}
 {% endfor %}
 </div>
