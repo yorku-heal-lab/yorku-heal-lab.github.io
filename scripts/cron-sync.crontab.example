@@ -1,0 +1,10 @@
+# Install (merges with your existing crontab — review before applying):
+#   (crontab -l 2>/dev/null; cat /path/to/datalab-website/scripts/cron-sync.crontab.example) | crontab -
+#
+# Requires: scripts/drive-data-links.yml with public share URLs, SSH push access to GitHub.
+
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin
+
+# Every day at 6:15 AM local time
+15 6 * * * /home/mila/Documents/DATALAB/datalab-website/scripts/cron_sync_from_drive.sh

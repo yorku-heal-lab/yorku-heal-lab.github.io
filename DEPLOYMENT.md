@@ -182,6 +182,57 @@ python3 scripts/sync_news_from_xlsx.py --dry-run
 python3 scripts/sync_news_from_xlsx.py
 ```
 
+### Automated sync from Google Drive (cron)
+
+Use this when the canonical spreadsheets live on Google Drive and a server (or your workstation) should pull updates, regenerate `_data/*.yml`, and push to `main` when anything changes.
+
+**One-time setup**
+
+1. For each spreadsheet, set Google Drive (or Google Sheets) sharing to **Anyone with the link** (viewer is enough).
+
+2. Copy the links manifest and paste the share URLs:
+
+   ```bash
+   cp scripts/drive-data-links.yml.example scripts/drive-data-links.yml
+   # Edit scripts/drive-data-links.yml — one url per file under scripts/data/
+   ```
+
+   Supported link shapes include `https://drive.google.com/file/d/…/view` and `https://docs.google.com/spreadsheets/d/…/edit` (Sheets are downloaded as `.xlsx`).
+
+3. Optional: `cp scripts/drive-sync.env.example scripts/drive-sync.env` for `GIT_BRANCH`, `PYTHON`, etc.
+
+4. Ensure this machine can push to GitHub without prompts (SSH key for `git@github.com`, or a credential helper).
+
+5. Install Python deps if needed: `pip install -r scripts/requirements.txt` (or use a `.venv` in the repo root).
+
+**Test manually**
+
+```bash
+# Preview downloads (lists files, no writes)
+python3 scripts/pull_data_from_drive_links.py --dry-run
+
+# Full cron job (pull, sync YAML, commit + push if changed)
+./scripts/cron_sync_from_drive.sh
+```
+
+Logs append to `scripts/logs/cron-sync.log`.
+
+**Install crontab**
+
+Example: run daily at 6:15 AM (adjust path and schedule):
+
+```bash
+(crontab -l 2>/dev/null; cat scripts/cron-sync.crontab.example) | crontab -
+```
+
+Or add one line yourself:
+
+```cron
+15 6 * * * /home/mila/Documents/DATALAB/datalab-website/scripts/cron_sync_from_drive.sh
+```
+
+The script downloads each file listed in `scripts/drive-data-links.yml` into `scripts/data/`, runs all five `sync_*_from_xlsx.py` scripts, then `git add`, `commit`, and `push` to `main` only when spreadsheets, `_data/`, or team photos under `assets/images/team/` changed. No rclone or Google account login is required on the cron host—only the public links.
+
 ### Content by section
 
 | Page / section | Spreadsheet | Sync script | Output |

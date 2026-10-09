@@ -6,3 +6,9 @@ vendor/
 .bundle/
 *.gem
 .DS_Store
+
+# Automated Drive sync (local secrets / logs)
+scripts/drive-sync.env
+scripts/drive-data-links.yml
+scripts/logs/
+scripts/.cron_sync_from_drive.lock
