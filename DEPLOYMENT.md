@@ -215,7 +215,9 @@ python3 scripts/pull_data_from_drive_links.py --dry-run
 ./scripts/cron_sync_from_drive.sh
 ```
 
-Logs append to `scripts/logs/cron-sync.log`.
+Logs append to `scripts/logs/cron-sync.log`. When you run the script in a terminal, output is shown there **and** saved to that file (cron-only runs write to the log only).
+
+If a run stops early, open the log: common causes are unstaged local changes blocking `git pull` (the script uses `git pull --rebase --autostash` to avoid that) or a second copy already running (file lock on `scripts/.cron_sync_from_drive.lock`).
 
 **Install crontab**
 

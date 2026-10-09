@@ -27,6 +27,9 @@ on_exit() {
 trap on_exit EXIT
 
 echo "=== $(date -Is) cron_sync_from_drive ==="
+echo "Log file: $LOG_FILE"
+
+export PYTHONUNBUFFERED=1
 
 if [[ -f "$ENV_FILE" ]]; then
   # shellcheck disable=SC1090
