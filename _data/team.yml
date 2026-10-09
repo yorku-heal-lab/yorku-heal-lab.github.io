@@ -11,7 +11,7 @@ leadership:
   website: https://scholar.google.com/citations?user=A2AROnAAAAAJ&hl=en
 - name: Dr. Christo El Morr
   role: Co-Director
-  title: Associate Professor and Chair, Professor
+  title: Professor and Chair
   department: School of Health Policy and Management
   faculty: Faculty of Health, York University
   photo: /assets/images/team/christo-el-morr.png
@@ -44,7 +44,7 @@ leadership:
 collaborators:
 - name: Alvine Boaye Belle
   role: Collaborator
-  photo: /assets/images/team/alvine-boaye-belle.jpg
+  photo: /assets/images/team/alvine-boaye-belle.jpeg
   affiliation: Associate Professor
   bio: >-
     Alvine B. Belle is an Associate Professor at the Department of Electrical Engineering and Computer Science at York University, Toronto, Canada. Her research focuses on generative AI, safety assurance, health informatics, and EDI (Equity-Diversity and Inclusion) in computing. She holds a Ph.D. in software engineering from the University of Quebec (Ecole de Technologie Supérieure), Montreal, Canada. She worked for two years as a postdoctoral researcher at the University of Ottawa, Ottawa, Canada. She has recently completed a graduate diploma in public administration and governance at McGill University, Montreal, Canada. She has authored several papers in top-tier venues such as Information and Software Technology, Journal of Systems and Software, ACM Computing Surveys, ICSA (formerly ECSA), and ACM Transactions on Computing Education.
@@ -56,6 +56,12 @@ collaborators:
   affiliation: Assistant Professor
   bio: |-
     Andrew Fisher obtained an Honours BSc from Brandon University in 2019 and began his MSc with a specialization in artificial intelligence at Lakehead University. His studies were supported by a SSHRC Grant and a Mitacs Globalink Research Award. In January 2021, he began a PhD at Saint Mary’s University, supported by a Mitacs Accelerate award and an industry partner in the construction sector, where he developed machine learning solutions to automate production workflows. His thesis was recognized with the J. Kevin Vessey Award for the Ph.D. in Applied Science. Andrew was then a Postdoctoral Visitor at York University, funded by the Connected Minds CFREF, where he focused on using large language models to improve the accessibility of health information. Currently, he is an Assistant Professor in the Faculty of Computer Science at the University of New Brunswick.
+- name: Anoop George
+  role: Collaborator
+  photo: /assets/images/team/anoop-george.jpg
+  affiliation: Associate professor
+  bio: |-
+    Phenomenology and Existentialism, Philosophy of Technology, Continental Philosophy, AI and Philosophy
 - name: Muskan Garg
   role: Collaborator
   photo: /assets/images/team/muskan-garg.jpeg
@@ -111,9 +117,11 @@ phd_students:
   bio: |-
     John investigates algorithmic fairness, bias, and equity in clinical Large Language Models and AI-enabled decision-support systems. His research integrates advanced statistical methods, including Bayesian networks and mediation analysis, with intersectional patient data to evaluate demographic disparities in AI-assisted chest pain assessment and diagnosis. His work focuses on identifying, quantifying, and mitigating systematic bias in medical AI, with the broader goal of ensuring that clinical artificial intelligence is statistically rigorous, clinically reliable, and equitable across diverse patient populations.
 - name: Manmeet Kaur Baxi
-  role: PhD Studebt
-  photo: /assets/images/team/placeholder.svg
+  role: PhD Student
+  photo: /assets/images/team/manmeet-kaur-baxi.jpg
   supervisor: Vijay Mago
+  bio: |-
+    Manmeet Kaur Baxi is a part-time PhD student in Health Systems Management and Health Data Analytics at York University, where her research sits at the intersection of artificial intelligence, agentic workflows, and healthcare. She is also an Applied AI Engineer at Instacart, where she builds and evaluates production-grade agentic AI systems, with a focus on multi-agent architectures, LLM evaluation, and reliable AI pipelines. Previously, she worked in data science and AI roles across Instacart, TD, and Scotiabank, applying machine learning, NLP, and data engineering to large-scale business and financial systems. She holds a master's degree in Artificial Intelligence from Lakehead University and has published research spanning AI, healthcare, social media analytics, and computational social science.
 - name: Mila Kolpashnikova
   role: PhD student
   photo: /assets/images/team/placeholder.svg
@@ -191,10 +199,12 @@ undergraduate_students:
   role: Undergraduate student
   photo: /assets/images/team/placeholder.svg
   supervisor: Vijay Mago
-- name: Praise
+- name: Praise Edet
   role: Undergraduate student
   photo: /assets/images/team/placeholder.svg
   supervisor: Vijay Mago
+  bio: |-
+    Praise Edet is a fourth year student in the Health Studies (Health Policy, Management and Digital Health) program at York University.
 researchers:
 - name: Marco A. Serrano
   role: Visiting Scholar
