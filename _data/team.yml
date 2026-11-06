@@ -118,7 +118,7 @@ phd_students:
     John investigates algorithmic fairness, bias, and equity in clinical Large Language Models and AI-enabled decision-support systems. His research integrates advanced statistical methods, including Bayesian networks and mediation analysis, with intersectional patient data to evaluate demographic disparities in AI-assisted chest pain assessment and diagnosis. His work focuses on identifying, quantifying, and mitigating systematic bias in medical AI, with the broader goal of ensuring that clinical artificial intelligence is statistically rigorous, clinically reliable, and equitable across diverse patient populations.
 - name: Manmeet Kaur Baxi
   role: PhD Student
-  photo: /assets/images/team/manmeet-kaur-baxi.jpg
+  photo: /assets/images/team/placeholder.svg
   supervisor: Vijay Mago
   bio: |-
     Manmeet Kaur Baxi is a part-time PhD student in Health Systems Management and Health Data Analytics at York University, where her research sits at the intersection of artificial intelligence, agentic workflows, and healthcare. She is also an Applied AI Engineer at Instacart, where she builds and evaluates production-grade agentic AI systems, with a focus on multi-agent architectures, LLM evaluation, and reliable AI pipelines. Previously, she worked in data science and AI roles across Instacart, TD, and Scotiabank, applying machine learning, NLP, and data engineering to large-scale business and financial systems. She holds a master's degree in Artificial Intelligence from Lakehead University and has published research spanning AI, healthcare, social media analytics, and computational social science.
@@ -133,7 +133,7 @@ phd_students:
   photo: /assets/images/team/most-husne-jahan.png
   supervisor: Elham Dolatabadi
   bio: |-
-    Most Husne Jahan is a PhD student working on multimodal deep learning, image and video understanding, and reasoning in vision-language models. Her research focuses on medical image and video understanding, multimodal large language models (MLLMs), and spatially grounded and spatiotemporal reasoning. Her broader research interests include image and video super-resolution, 3D point cloud processing, adversarial machine learning and robust training, model optimization, and efficient deep learning.
+    Most Husne Jahan is a PhD researcher advancing multimodal deep learning, image and video understanding, and reasoning in vision-language models. Her research focuses on medical image and video analysis, multimodal large language models (MLLMs), spatially grounded reasoning, and spatiotemporal understanding. Her broader research interests include image and video super-resolution, 3D point cloud processing, adversarial machine learning, robust training, model optimization, and efficient deep learning.
 - name: Negin Baghbanzadeh
   role: PhD Student
   photo: /assets/images/team/negin-baghbanzadeh.png
@@ -195,10 +195,12 @@ masters_students:
   bio: |-
     Shayan Emzad is an MSc student involved in research on safe, human-aligned mental health AI and multimodal reasoning in medical vision-language models. His work bridges trustworthy conversational AI and multimodal medical AI.
 undergraduate_students:
-- name: Devanshi
+- name: Devanshi Sharma
   role: Undergraduate student
-  photo: /assets/images/team/placeholder.svg
+  photo: /assets/images/team/devanshi-sharma.jpeg
   supervisor: Vijay Mago
+  bio: |-
+    Devanshi Sharma is a third year student in the Health Studies (Health Policy, Management and Digital Health) program at York University.
 - name: Praise Edet
   role: Undergraduate student
   photo: /assets/images/team/placeholder.svg
